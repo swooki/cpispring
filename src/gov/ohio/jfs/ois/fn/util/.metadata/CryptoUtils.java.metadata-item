@@ -1,0 +1,13 @@
+version=10.2
+item-uid=1547677960
+file-version=1
+checksum=c0326b72fd25c1247a1a68d0e48768d5
+fetch-size=2362
+mtime=1330634052
+item-spec=464E45543A43525950544F5554494C53204A4156412D3132323233373739335831353934385832342E412D4A4156413B31
+item-status=43524541544544
+is-extracted=0
+is-headersubst=0
+relpath=ExtractAuditLog/src/gov/ohio/jfs/ois/fn/util/CryptoUtils.java
+project=464E45543A464E45545F4F4143
+project-uid=1538976032
