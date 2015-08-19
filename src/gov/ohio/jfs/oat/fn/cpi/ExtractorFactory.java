@@ -2,19 +2,19 @@ package gov.ohio.jfs.oat.fn.cpi;
 
 public class ExtractorFactory {
 	
-	public static final String EXTRACTOR_TYPE_FILENET = "filenet"; 
-	public static final String EXTRACTOR_TYPE_DATABASE = "db";
-	public static final String EXTRACTOR_TYPE_TEST = "test";
+	public static final String EXTRACTOR_TYPE_FILENET = "FILENET"; 
+	public static final String EXTRACTOR_TYPE_DATABASE = "DB";
+	public static final String EXTRACTOR_TYPE_TEST = "TEST";
 
-	public static Extractable getExtractor(String type){
+	public static Extractable getExtractor(Application app){
 		Extractable extractor = null;
-		if(type.equals(EXTRACTOR_TYPE_TEST)) {
+		if(app.getExtractorType().equals(EXTRACTOR_TYPE_TEST)) {
 			extractor = new TestExtractor(); 
 		}
-		if(type.equals(EXTRACTOR_TYPE_FILENET)) {
-			extractor = new FileNetExtractor(); 
+		if(app.getExtractorType().equals(EXTRACTOR_TYPE_FILENET)) {
+			extractor = new FileNetExtractor(app); 
 		}
-		if(type.equals(EXTRACTOR_TYPE_DATABASE)) {
+		if(app.getExtractorType().equals(EXTRACTOR_TYPE_DATABASE)) {
 			extractor = new DBExtractor(); 
 		}
 		return extractor; 

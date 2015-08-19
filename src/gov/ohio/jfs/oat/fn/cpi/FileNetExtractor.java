@@ -35,24 +35,20 @@ public class FileNetExtractor implements Extractable {
 
 	private Connection conn;
 
+	private Application targetApplication;
+
 	private Properties properties = new Properties();
-
 	private static Logger logger = Logger.getLogger(Object.class);
-
-	private String objectStoreName;
-	private String applicationName;
-	private String sourceClassName;
 	private int maxEventNum = 1000;
 
-	private Exportable exporter = null;
-
-	public void setExporter(Exportable exporter) {
-		this.exporter = exporter;
+	public void setTargetApplication(Application app) {
+		targetApplication = app;
 	}
 
-	public FileNetExtractor() {
+	public FileNetExtractor(Application app) {
 		super();
-		logger.setLevel(Level.DEBUG);
+
+		targetApplication = app;
 
 		String propertyFileName = getClass().getSimpleName() + ".properties";
 
@@ -64,18 +60,19 @@ public class FileNetExtractor implements Extractable {
 		}
 		conn = Factory.Connection.getConnection(properties
 				.getProperty("CE_URI"));
-		objectStoreName = properties.getProperty("OS");
-		applicationName = properties.getProperty("APPLICATION_NAME");
-		sourceClassName = properties.getProperty("SOURCE_CLASS_NAME");
 	}
 
 	@Override
-	public ArrayList<CPILog> extract() {
-		
+	public ArrayList<CPILog> extract() throws Exception {
+
 		ArrayList<CPILog> logs = new ArrayList<CPILog>();
 		int counter = 0;
 		FileNetAppInfo appInfo = null;
-		
+
+		if (targetApplication == null) {
+			throw new Exception("The target application is not assigned");
+		}
+
 		String password;
 
 		try {
@@ -85,12 +82,12 @@ public class FileNetExtractor implements Extractable {
 					properties.getProperty("JAAS_STANZA_NAME"));
 			UserContext.get().pushSubject(subject);
 		} catch (GeneralSecurityException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			throw e1;
 		}
 
 		Domain dom = Factory.Domain.getInstance(conn, null);
-		ObjectStore os = Factory.ObjectStore.getInstance(dom, objectStoreName);
+		ObjectStore os = Factory.ObjectStore.getInstance(dom,
+				targetApplication.getObjectStoreName());
 		os.refresh();
 
 		// Extract events that have been created on the given date.
@@ -101,7 +98,7 @@ public class FileNetExtractor implements Extractable {
 				+ "  FROM [Event] ev INNER JOIN [Document] doc ON ev.SourceObjectId = doc.id"
 				+ " WHERE IsClass(ev, GetContentEvent)"
 				+ "   AND IsClass(doc, "
-				+ this.sourceClassName
+				+ targetApplication.getSourceClassName()
 				+ ")"
 				+ "   AND ev.[Creator] <> \'FileNet-P8Admin\'");
 
@@ -111,7 +108,8 @@ public class FileNetExtractor implements Extractable {
 		filters.addIncludeProperty(1, null, null, "Creator", null);
 		filters.addIncludeProperty(1, null, null, "SourceObjectId", null);
 
-		IndependentObjectSet objSet = eventScope.fetchObjects(eventSql, 200, null, true);
+		IndependentObjectSet objSet = eventScope.fetchObjects(eventSql, 200,
+				null, true);
 		PageIterator pItr = objSet.pageIterator();
 
 		while (pItr.nextPage()) {
@@ -121,6 +119,9 @@ public class FileNetExtractor implements Extractable {
 					os.get_Domain(), RefreshMode.NO_REFRESH);
 
 			// Loop through each item in the page
+			appInfo = FileNetAppInfoFactory.getFileNetAppInfo(targetApplication
+					.getName());
+
 			for (Object obj : pItr.getCurrentPage()) {
 				try {
 					counter++;
@@ -128,15 +129,16 @@ public class FileNetExtractor implements Extractable {
 					Event ev = (Event) obj;
 
 					// Get the values for event class
-					log.setApplication(this.applicationName);
-					log.setDateAccessed(ev.getProperties().getDateTimeValue("DateCreated"));
-					log.setUserAccessed(ev.getProperties().getStringValue("Creator"));
-					log.setDocumentAccessed(ev.getProperties().getIdValue("SourceObjectId").toString());
+					log.setApplication(targetApplication.getName());
+					log.setDateAccessed(ev.getProperties().getDateTimeValue(
+							"DateCreated"));
+					log.setUserAccessed(ev.getProperties().getStringValue(
+							"Creator"));
+					log.setDocumentAccessed(ev.getProperties()
+							.getIdValue("SourceObjectId").toString());
 
 					// Get the additional information from document class
-					appInfo = FileNetAppInfoFactory.getFileNetAppInfo(applicationName);
 					appInfo.getTargetInfo(dom, os, log);
-					
 					logs.add(log);
 
 					if (logger.getEffectiveLevel() != Level.DEBUG) {

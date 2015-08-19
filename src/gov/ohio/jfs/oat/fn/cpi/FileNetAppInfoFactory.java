@@ -2,12 +2,12 @@ package gov.ohio.jfs.oat.fn.cpi;
 
 public class FileNetAppInfoFactory {
 
-	public static FileNetAppInfo getFileNetAppInfo(String type){
+	public static FileNetAppInfo getFileNetAppInfo(String applicationName){
 		FileNetAppInfo appInfo = null;
-		if(type.equals("FN_REDET")) {
+		if(applicationName.equals("FN_REDET")) {
 			appInfo = new FileNetREDETInfo(); 
 		}
-		if(type.equals("FN_UCBPC")) {
+		if(applicationName.equals("FN_UCBPC")) {
 			appInfo = new FileNetUCBPCInfo(); 
 		}
 		return appInfo; 
