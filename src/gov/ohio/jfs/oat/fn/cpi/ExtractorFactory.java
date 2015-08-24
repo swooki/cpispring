@@ -9,13 +9,13 @@ public class ExtractorFactory {
 	public static Extractable getExtractor(Application app){
 		Extractable extractor = null;
 		if(app.getExtractorType().equals(EXTRACTOR_TYPE_TEST)) {
-			extractor = new TestExtractor(); 
+			extractor = new TestExtractor(app); 
 		}
 		if(app.getExtractorType().equals(EXTRACTOR_TYPE_FILENET)) {
 			extractor = new FileNetExtractor(app); 
 		}
 		if(app.getExtractorType().equals(EXTRACTOR_TYPE_DATABASE)) {
-			extractor = new DBExtractor(); 
+			extractor = new DBExtractor(app); 
 		}
 		return extractor; 
 	}

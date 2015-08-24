@@ -20,15 +20,14 @@ public class ExtractCPILogs {
 	public ExtractCPILogs(Application app) {
 		this.app = app;
 	}
-	
-	public Application getApplication(){
+
+	public Application getApplication() {
 		return this.app;
 	}
 
 	public static void main(String[] args) throws Exception {
 
 		DOMConfigurator.configure("log4j.xml");
-		
 
 		// The name of property file for the target application should be passed
 		// via argument
@@ -36,18 +35,26 @@ public class ExtractCPILogs {
 			throw new Exception(
 					"\n\nUsage: ExtractAuditLog.java APPLICATION_NAME\n");
 		}
-		 String propertyFileName = args[0] + ".properties";
+		String propertyFileName = args[0] + ".properties";
 		try {
 			properties.load(new FileInputStream(propertyFileName));
 		} catch (IOException e) {
-			throw new Exception("Couldn't find the configuration file: " + propertyFileName);
+			throw new Exception("Couldn't find the configuration file for the application: "
+					+ propertyFileName);
 		}
-		
+
 		ExtractCPILogs ecl = new ExtractCPILogs(new Application(args[0]));
-		Extractable extractor = ExtractorFactory.getExtractor(ecl.getApplication());
+		Extractable extractor = ExtractorFactory.getExtractor(ecl
+				.getApplication());
 		ArrayList<CPILog> logs = extractor.extract();
-		Exportable exporter = ExporterFactory.getExtractor(ecl.getApplication());
-		exporter.export(logs);
+		System.out.println(logs.size() + " logs are extracted.");
+		
+		if (logs.size() > 0) {
+			Exportable exporter = ExporterFactory.getExtractor(ecl
+					.getApplication());
+			exporter.export(logs);
+			System.out.println(logs.size() + " logs are exported.");
+		}
 	}
 
 	void showLogs(ArrayList<CPILog> logs) {

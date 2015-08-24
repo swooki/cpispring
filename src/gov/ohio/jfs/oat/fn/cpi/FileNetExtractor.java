@@ -41,6 +41,9 @@ public class FileNetExtractor implements Extractable {
 	private static Logger logger = Logger.getLogger(Object.class);
 	private int maxEventNum = 1000;
 
+	private FileNetExtractor() {
+	}
+	
 	public void setTargetApplication(Application app) {
 		targetApplication = app;
 	}
@@ -141,7 +144,7 @@ public class FileNetExtractor implements Extractable {
 					appInfo.getTargetInfo(dom, os, log);
 					logs.add(log);
 
-					if (logger.getEffectiveLevel() != Level.DEBUG) {
+					if (this.targetApplication.deleteAfterLog() == true ) {
 						ev.delete();
 						batch.add(ev, null);
 					}

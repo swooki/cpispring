@@ -5,29 +5,37 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class TestExtractor implements Extractable {
+	private Application app = null;
+
+	private TestExtractor() {
+	}
+
+	public TestExtractor(Application app) {
+		this.app = app;
+	}
 
 	@Override
-	public ArrayList<CPILog> extract()  {
+	public ArrayList<CPILog> extract() throws Exception {
 		ArrayList<CPILog> logs = new ArrayList<CPILog>();
-		
-		logs.add( getNewCPILog());
-		logs.add( getNewCPILog());
-		logs.add( getNewCPILog());
-		logs.add( getNewCPILog());
+
+		logs.add(getNewCPILog());
+		logs.add(getNewCPILog());
+		logs.add(getNewCPILog());
+		logs.add(getNewCPILog());
 
 		return logs;
 	}
 
-	private static CPILog getNewCPILog() {
+	private CPILog getNewCPILog() {
 		SimpleDateFormat formatter = new SimpleDateFormat("mmddyyyyHHMMSSS");
-		
+
 		CPILog log = new CPILog();
 		log.setAction("Retrieve");
-		log.setApplication("FN_REDET");
+		log.setApplication(this.app.getName());
 		log.setDateAccessed(new Date());
 		log.setDateCreated(new Date());
 		log.setDocumentAccessed("DOC");
-		log.setPersonalId( formatter.format(new Date()));
+		log.setPersonalId(formatter.format(new Date()));
 		log.setUserAccessed("KWONS");
 
 		return log;

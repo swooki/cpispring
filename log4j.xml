@@ -17,7 +17,12 @@
 				value="%d %-5p  [%c{1}] %m %n" />
 		</layout>
 	</appender>
-	<logger name="gov.ohio.jfs.oat.fn.cpi.ExtractCPILog" additivity="false">
+	<logger name="gov.ohio.jfs.oat.fn.cpi.ExtractCPILog" additivity="true">
+		<level value="DEBUG" />
+		<appender-ref ref="consoleAppender" />
+		<appender-ref ref="fileAppender" />
+	</logger>
+	<logger name="gov.ohio.jfs.oat.fn.cpi.CSVExporter" additivity="false">
 		<level value="DEBUG" />
 		<appender-ref ref="consoleAppender" />
 		<appender-ref ref="fileAppender" />
