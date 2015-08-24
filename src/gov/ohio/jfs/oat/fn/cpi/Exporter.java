@@ -5,6 +5,12 @@ import java.util.ArrayList;
 public abstract class Exporter implements Exportable {
 	private Application app;
 	
+	private Exporter() {};
+	
+	public Exporter(Application app) {
+		this.app = app;
+	}
+	
 	public Application getApplication() {
 		return app;
 	}

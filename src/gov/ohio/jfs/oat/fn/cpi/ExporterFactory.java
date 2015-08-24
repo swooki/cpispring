@@ -13,10 +13,10 @@ public class ExporterFactory {
 			exporter = new CSVExporter(app);
 		}
 		if (app.getExporterType().equals(EXPORTER_TYPE_XML)) {
-			exporter = new XMLExtporter();
+			exporter = new XMLExtporter(app);
 		}
 		if (app.getExporterType().equals(EXPORTER_TYPE_CONSOLE)) {
-			exporter = new ConsoleExtporter();
+			exporter = new ConsoleExtporter(app);
 		}
 		return exporter;
 	}

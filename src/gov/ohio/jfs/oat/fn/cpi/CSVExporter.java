@@ -10,13 +10,12 @@ import org.apache.log4j.Logger;
 
 public class CSVExporter extends Exporter implements Exportable {
 
-	private Application app = null;
 	private Properties props = null;
 	private static Logger logger = Logger.getLogger(Object.class);
 
-	public CSVExporter() {};
 	public CSVExporter(Application app) {
-		this.app = app;
+		super(app);
+		
 		props = new Properties();
 		String propertyFileName = app.getName() + ".properties";
 		try {
