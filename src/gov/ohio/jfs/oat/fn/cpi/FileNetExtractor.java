@@ -31,7 +31,7 @@ import com.filenet.api.query.SearchSQL;
 import com.filenet.api.query.SearchScope;
 import com.filenet.api.util.UserContext;
 
-public class FileNetExtractor implements Extractable {
+public class FileNetExtractor extends Extractor implements Extractable {
 
 	private Connection conn;
 
@@ -41,15 +41,12 @@ public class FileNetExtractor implements Extractable {
 	private static Logger logger = Logger.getLogger(Object.class);
 	private int maxEventNum = 1000;
 
-	private FileNetExtractor() {
-	}
-	
 	public void setTargetApplication(Application app) {
 		targetApplication = app;
 	}
 
 	public FileNetExtractor(Application app) {
-		super();
+		super(app);
 
 		targetApplication = app;
 

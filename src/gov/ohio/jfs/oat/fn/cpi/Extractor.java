@@ -3,22 +3,19 @@ package gov.ohio.jfs.oat.fn.cpi;
 import java.util.ArrayList;
 
 public abstract class Extractor implements Extractable {
-	private String applicationName;
+	private Application application;
 	
-	public String getApplicationName() {
-		return applicationName;
+	public Application getApplicationName() {
+		return application;
 	}
 
-	public void setApplicationName(String applicationName) {
-		this.applicationName = applicationName;
-	}
 	
 	private Extractor() {};
-	public Extractor(String applicationName) {
-		this.applicationName = applicationName;
+	public Extractor(Application application) {
+		this.application = application;
 	}
 
 	@Override
-	abstract public ArrayList<CPILog> extract();
+	abstract public ArrayList<CPILog> extract() throws Exception;
 
 }

@@ -18,10 +18,10 @@ public class Application {
 
 	private String name;
 	private String extractorType;
-	private String exporterType;
 	private String objectStoreName;
 	private String sourceClassName;
 	private boolean deleteAfterLog = false;
+	private String exporterType;
 
 	private Properties properties = new Properties();
 

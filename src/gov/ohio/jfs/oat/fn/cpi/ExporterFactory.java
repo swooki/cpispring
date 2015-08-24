@@ -10,7 +10,7 @@ public class ExporterFactory {
 		Exportable exporter = null;
 
 		if (app.getExporterType().equals(EXPORTER_TYPE_CSV)) {
-			exporter = new CSVExporter();
+			exporter = new CSVExporter(app);
 		}
 		if (app.getExporterType().equals(EXPORTER_TYPE_XML)) {
 			exporter = new XMLExtporter();
