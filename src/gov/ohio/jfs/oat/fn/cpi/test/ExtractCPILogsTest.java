@@ -18,7 +18,7 @@ public class ExtractCPILogsTest {
 	@Test
 	public void testExtractCPILogs() {
 		try {
-			ExtractCPILogs ecl = new ExtractCPILogs(new Application("FN_ICC"));
+			ExtractCPILogs ecl = new ExtractCPILogs(new Application("FN_REDET"));
 			Extractable extractor = ExtractorFactory.getExtractor(ecl.getApplication());
 			ArrayList<CPILog> logs = extractor.extract();
 			Exportable exporter = ExporterFactory.getExtractor(ecl.getApplication());

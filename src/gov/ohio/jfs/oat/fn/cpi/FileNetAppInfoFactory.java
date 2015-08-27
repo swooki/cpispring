@@ -10,6 +10,9 @@ public class FileNetAppInfoFactory {
 		if(applicationName.equals("FN_UCBPC")) {
 			appInfo = new FileNetUCBPCInfo(); 
 		}
+		if(applicationName.equals("FN_UIDMS")) {
+			appInfo = new FileNetUCBPCInfo(); 
+		}
 		if(applicationName.equals("FN_AARW")) {
 			appInfo = new FileNetAARWInfo(); 
 		}

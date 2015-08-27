@@ -1,6 +1,7 @@
 package gov.ohio.jfs.oat.fn.cpi;
 
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -15,28 +16,45 @@ public class CSVExporter extends Exporter implements Exportable {
 
 	public CSVExporter(Application app) {
 		super(app);
-		
+
 		props = new Properties();
-		String propertyFileName = app.getName() + ".properties";
 		try {
-			props.load(new FileInputStream(propertyFileName));
+			props.load(new FileInputStream(app.getName() + ".properties"));
 		} catch (IOException e) {
 			System.out.println("Couldn't find the configuration file: "
-					+ propertyFileName);
+					+ app.getName() + ".properties");
 		}
 	}
 
 	@Override
-	public void export(ArrayList<CPILog> logs) {
+	public void export(ArrayList<CPILog> logs) throws Exception {
 		SimpleDateFormat formatter = new SimpleDateFormat(
-				props.getProperty("SIMPLE_DATE_FORMAT"));
+				props.getProperty("DATE_FORMAT"));
+
+		boolean isAppend = (props.getProperty("MODE").equals("APPEND")) ? true
+				: false;
+
+		// Open output file
+		FileWriter writer = new FileWriter(this.getApplication().getName()
+				+ ".csv", isAppend);
+
 		for (CPILog log : logs) {
-			logger.info(log.getApplication() + "," + log.getAction() 
-					+ "," + log.getDocumentAccessed() + ","
-					+ log.getPersonalId() + "," + log.getUserAccessed() + ","
-					+ formatter.format(log.getDateAccessed()) + ","
-					+ formatter.format(log.getDateCreated()));
+			writer.append(log.getApplication() + ',');
+			writer.append(log.getUserAccessed() + ',');
+			writer.append(formatter.format(log.getDateAccessed()) + ',');
+			writer.append(log.getPersonalId().replace(',', '.') + ',');
+			writer.append(formatter.format(log.getDateCreated()) + ',');
+			writer.append(log.getDocumentAccessed() + '\n');
+			writer.flush();
+
+			logger.info(log.getApplication() + ',' + log.getUserAccessed()
+					+ ',' + formatter.format(log.getDateAccessed()) + ','
+					+ log.getPersonalId().replace(',', '.') + ','
+					+ formatter.format(log.getDateCreated()) + ','
+					+ log.getDocumentAccessed() + '\n');
 		}
+		writer.close();
+
 		logger.info(logs.size() + " have been exported.");
 	}
 }
