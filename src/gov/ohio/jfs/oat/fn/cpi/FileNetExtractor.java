@@ -37,7 +37,8 @@ public class FileNetExtractor extends Extractor implements Extractable {
 
 	private Application targetApplication;
 
-	private Properties properties = new Properties();
+	private Properties fileNetProperties = new Properties();
+	private Properties applicationProperties = new Properties();
 	private static Logger logger = Logger.getLogger(Object.class);
 	private int maxEventNum = 1000;
 
@@ -53,12 +54,14 @@ public class FileNetExtractor extends Extractor implements Extractable {
 		String propertyFileName = getClass().getSimpleName() + ".properties";
 
 		try {
-			properties.load(new FileInputStream(propertyFileName));
+			fileNetProperties.load(new FileInputStream(propertyFileName));
+			applicationProperties.load(new FileInputStream(targetApplication
+					.getName() + ".properties"));
 		} catch (IOException e) {
 			System.out.println("Couldn't find the configuration file: "
 					+ propertyFileName);
 		}
-		conn = Factory.Connection.getConnection(properties
+		conn = Factory.Connection.getConnection(fileNetProperties
 				.getProperty("CE_URI"));
 	}
 
@@ -67,6 +70,7 @@ public class FileNetExtractor extends Extractor implements Extractable {
 
 		ArrayList<CPILog> logs = new ArrayList<CPILog>();
 		int counter = 0;
+
 		FileNetAppInfo appInfo = null;
 
 		if (targetApplication == null) {
@@ -76,10 +80,11 @@ public class FileNetExtractor extends Extractor implements Extractable {
 		String password;
 
 		try {
-			password = CryptoUtils.decrypt(properties.getProperty("PASSWORD"));
+			password = CryptoUtils.decrypt(fileNetProperties
+					.getProperty("PASSWORD"));
 			Subject subject = UserContext.createSubject(conn,
-					properties.getProperty("USERID"), password,
-					properties.getProperty("JAAS_STANZA_NAME"));
+					fileNetProperties.getProperty("USERID"), password,
+					fileNetProperties.getProperty("JAAS_STANZA_NAME"));
 			UserContext.get().pushSubject(subject);
 		} catch (GeneralSecurityException e1) {
 			throw e1;
@@ -141,7 +146,7 @@ public class FileNetExtractor extends Extractor implements Extractable {
 					appInfo.getTargetInfo(dom, os, log);
 					logs.add(log);
 
-					if (this.targetApplication.deleteAfterLog() == true ) {
+					if (this.targetApplication.deleteAfterLog() == true) {
 						ev.delete();
 						batch.add(ev, null);
 					}
