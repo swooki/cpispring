@@ -9,7 +9,6 @@ public abstract class Extractor implements Extractable {
 		return application;
 	}
 
-	
 	private Extractor() {};
 	public Extractor(Application application) {
 		this.application = application;
