@@ -12,16 +12,16 @@ import org.apache.log4j.xml.DOMConfigurator;
 
 public class ExtractCPILogs {
 
-	private ApplicationConfig app;
+	private AppConfig app;
 	private static Logger logger = Logger.getLogger(ExtractCPILogs.class);
 	private static Properties properties = new Properties();
 
 	// expecting 3 parameters; application name;
-	public ExtractCPILogs(ApplicationConfig app) {
+	public ExtractCPILogs(AppConfig app) {
 		this.app = app;
 	}
 
-	public ApplicationConfig getApplication() {
+	public AppConfig getAppConfig() {
 		return this.app;
 	}
 
@@ -39,6 +39,7 @@ public class ExtractCPILogs {
 		logger.info("Application Name: " + args[0]);
 		
 		String propertyFileName = args[0] + ".properties";
+		logger.debug(propertyFileName);
 		try {
 			properties.load(new FileInputStream(propertyFileName));
 		} catch (IOException e) {
@@ -47,15 +48,15 @@ public class ExtractCPILogs {
 		}
 		logger.info("Application Property File: " + propertyFileName);
 
-		ExtractCPILogs ecl = new ExtractCPILogs(new ApplicationConfig(args[0]));
-		Extractable extractor = ExtractorFactory.getExtractor(ecl
-				.getApplication());
+		AppConfig config = new AppConfig(args[0]);
+		ExtractCPILogs ecl = new ExtractCPILogs(new AppConfig(args[0]));
+		Extractable extractor = ExtractorFactory.getExtractor(ecl.getAppConfig());
 		ArrayList<CPILog> logs = extractor.extract();
 		logger.info(logs.size() + " logs are extracted.");
 		
 		if (logs.size() > 0) {
 			Exportable exporter = ExporterFactory.getExtractor(ecl
-					.getApplication());
+					.getAppConfig());
 			exporter.export(logs);
 			logger.info(logs.size() + " logs are exported.");
 		}

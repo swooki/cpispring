@@ -14,7 +14,7 @@ public class CSVExporter extends Exporter implements Exportable {
 	private Properties props = null;
 	private static Logger logger = Logger.getLogger(Object.class);
 
-	public CSVExporter(ApplicationConfig app) {
+	public CSVExporter(AppConfig app) {
 		super(app);
 
 		props = new Properties();

@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class TestExtractor implements Extractable {
-	private ApplicationConfig app = null;
+	private AppConfig app = null;
 
 	private TestExtractor() {
 	}
 
-	public TestExtractor(ApplicationConfig app) {
+	public TestExtractor(AppConfig app) {
 		this.app = app;
 	}
 

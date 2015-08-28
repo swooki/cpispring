@@ -6,9 +6,9 @@ public class ExporterFactory {
 	public static final String EXPORTER_TYPE_XML = "XML";
 	public static final String EXPORTER_TYPE_CONSOLE = "CONSOLE";
 
-	public static Exportable getExtractor(ApplicationConfig app) {
+	public static Exportable getExtractor(AppConfig app) {
 		Exportable exporter = null;
-		String exporterType = app.getProperty(ApplicationConfig.EXPORTER_TYPE);
+		String exporterType = app.getProperty(AppConfig.EXPORTER_TYPE);
 
 		if (exporterType.equals(EXPORTER_TYPE_CSV)) {
 			exporter = new CSVExporter(app);

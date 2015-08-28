@@ -16,7 +16,7 @@
 		</layout>
 	</appender>
 	<root additivity="true">
-		<priority value="info" />
+		<priority value="INFO" />
 		<appender-ref ref="consoleAppender" />
 		<appender-ref ref="fileAppender" />
 	</root>

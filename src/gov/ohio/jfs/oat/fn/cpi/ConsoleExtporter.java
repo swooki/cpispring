@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ConsoleExtporter extends Exporter implements Exportable {
 	
-	public ConsoleExtporter(ApplicationConfig app) {
+	public ConsoleExtporter(AppConfig app) {
 		super(app);
 	}
 	@Override

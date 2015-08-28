@@ -7,7 +7,7 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 
 // The fields are populated from the property files, <Application Name>.properties
-public class ApplicationConfig {
+public class AppConfig {
 
 	// Generic fields in <Application>.properties file
 	public static final String APPLICATION_NAME = "APPLICATION_NAME";
@@ -39,10 +39,10 @@ public class ApplicationConfig {
 
 	private Properties properties = new Properties();
 
-	private ApplicationConfig() {
+	private AppConfig() {
 		}
 
-	public ApplicationConfig(String name) throws IOException {
+	public AppConfig(String name) throws IOException {
 		this.name = name;
 		try {
 			properties.load(new FileInputStream(name + ".properties"));

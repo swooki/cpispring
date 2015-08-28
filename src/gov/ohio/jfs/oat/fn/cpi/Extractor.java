@@ -3,14 +3,14 @@ package gov.ohio.jfs.oat.fn.cpi;
 import java.util.ArrayList;
 
 public abstract class Extractor implements Extractable {
-	private ApplicationConfig application;
+	private AppConfig application;
 	
-	public ApplicationConfig getApplicationName() {
+	public AppConfig getApplicationName() {
 		return application;
 	}
 
 	private Extractor() {};
-	public Extractor(ApplicationConfig application) {
+	public Extractor(AppConfig application) {
 		this.application = application;
 	}
 
