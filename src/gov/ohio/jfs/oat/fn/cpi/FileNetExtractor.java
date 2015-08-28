@@ -40,7 +40,7 @@ public class FileNetExtractor extends Extractor implements Extractable {
 	private Properties fileNetProperties = new Properties();
 	private Properties applicationProperties = new Properties();
 	private static Logger logger = Logger.getLogger(Object.class);
-	private int maxEventNum = 1000;
+	private int maxEventNum;
 
 	public void setTargetApplication(Application app) {
 		targetApplication = app;
@@ -48,7 +48,6 @@ public class FileNetExtractor extends Extractor implements Extractable {
 
 	public FileNetExtractor(Application app) {
 		super(app);
-
 		targetApplication = app;
 
 		String propertyFileName = getClass().getSimpleName() + ".properties";
@@ -58,11 +57,13 @@ public class FileNetExtractor extends Extractor implements Extractable {
 			applicationProperties.load(new FileInputStream(targetApplication
 					.getName() + ".properties"));
 		} catch (IOException e) {
-			System.out.println("Couldn't find the configuration file: "
+			logger.error("Couldn't find the configuration file: "
 					+ propertyFileName);
 		}
 		conn = Factory.Connection.getConnection(fileNetProperties
 				.getProperty("CE_URI"));
+		maxEventNum = Integer.parseInt(fileNetProperties
+				.getProperty("MAX_NUM_EVENTS"));
 	}
 
 	@Override
@@ -117,6 +118,9 @@ public class FileNetExtractor extends Extractor implements Extractable {
 				null, true);
 		PageIterator pItr = objSet.pageIterator();
 
+		appInfo = FileNetAppInfoFactory.getFileNetAppInfo(targetApplication
+				.getName());
+
 		while (pItr.nextPage()) {
 
 			// Define a batch for update
@@ -124,8 +128,6 @@ public class FileNetExtractor extends Extractor implements Extractable {
 					os.get_Domain(), RefreshMode.NO_REFRESH);
 
 			// Loop through each item in the page
-			appInfo = FileNetAppInfoFactory.getFileNetAppInfo(targetApplication
-					.getName());
 
 			for (Object obj : pItr.getCurrentPage()) {
 				try {
@@ -152,9 +154,7 @@ public class FileNetExtractor extends Extractor implements Extractable {
 					}
 
 				} catch (Exception e) {
-					System.out.println("\n" + e.getMessage());
-					e.printStackTrace();
-					continue;
+					throw e;
 				}
 			} // for
 

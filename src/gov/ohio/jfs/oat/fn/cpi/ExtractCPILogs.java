@@ -32,9 +32,12 @@ public class ExtractCPILogs {
 		// The name of property file for the target application should be passed
 		// via argument
 		if (args.length != 1) {
+			logger.error("Usage: ExtractAuditLog.java <APPLICATION_NAME>");
 			throw new Exception(
-					"\n\nUsage: ExtractAuditLog.java APPLICATION_NAME\n");
+					"\n\nUsage: ExtractAuditLog.java <APPLICATION_NAME>\n");
 		}
+		logger.info("Application Name: " + args[0]);
+		
 		String propertyFileName = args[0] + ".properties";
 		try {
 			properties.load(new FileInputStream(propertyFileName));
@@ -42,18 +45,19 @@ public class ExtractCPILogs {
 			throw new Exception("Couldn't find the configuration file for the application: "
 					+ propertyFileName);
 		}
+		logger.info("Application Property File: " + propertyFileName);
 
 		ExtractCPILogs ecl = new ExtractCPILogs(new Application(args[0]));
 		Extractable extractor = ExtractorFactory.getExtractor(ecl
 				.getApplication());
 		ArrayList<CPILog> logs = extractor.extract();
-		System.out.println(logs.size() + " logs are extracted.");
+		logger.info(logs.size() + " logs are extracted.");
 		
 		if (logs.size() > 0) {
 			Exportable exporter = ExporterFactory.getExtractor(ecl
 					.getApplication());
 			exporter.export(logs);
-			System.out.println(logs.size() + " logs are exported.");
+			logger.info(logs.size() + " logs are exported.");
 		}
 	}
 

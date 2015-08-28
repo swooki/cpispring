@@ -12,17 +12,21 @@ public class Application {
 	public static final String APPLICATION_NAME = "APPLICATION_NAME";
 	public static final String EXTRACTOR_TYPE = "EXTRACTOR_TYPE";
 	public static final String EXPORTER_TYPE = "EXPORTER_TYPE";
+
 	public static final String OBJECT_STORE_NAME = "OBJECT_STORE_NAME";
 	public static final String SOURCE_CLASS_NAME = "SOURCE_CLASS_NAME";
 	public static final String DELETE_AFTER_LOG = "DELETE_AFTER_LOG";
 
 	private String name;
 	private String extractorType;
+	private String exporterType;
+	private static Logger logger = Logger.getLogger(Application.class);
+
+	
 	private String objectStoreName;
 	private String sourceClassName;
 	private boolean deleteAfterLog = false;
-	private String exporterType;
-
+	
 	private Properties properties = new Properties();
 
 	private Application() {
@@ -38,7 +42,10 @@ public class Application {
 
 		this.name = name;
 		this.extractorType = properties.getProperty(EXTRACTOR_TYPE);
+		logger.info(EXTRACTOR_TYPE + ": " + extractorType);
 		this.exporterType = properties.getProperty(EXPORTER_TYPE);
+		logger.info(EXPORTER_TYPE + ": " + exporterType);
+		
 		this.objectStoreName = properties.getProperty(OBJECT_STORE_NAME);
 		this.sourceClassName = properties.getProperty(SOURCE_CLASS_NAME);
 		this.deleteAfterLog = (properties.getProperty(DELETE_AFTER_LOG)

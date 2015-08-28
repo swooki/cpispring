@@ -54,7 +54,5 @@ public class CSVExporter extends Exporter implements Exportable {
 					+ log.getDocumentAccessed() + '\n');
 		}
 		writer.close();
-
-		logger.info(logs.size() + " have been exported.");
 	}
 }
