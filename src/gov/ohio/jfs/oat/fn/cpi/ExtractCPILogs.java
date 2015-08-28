@@ -12,16 +12,16 @@ import org.apache.log4j.xml.DOMConfigurator;
 
 public class ExtractCPILogs {
 
-	private Application app;
+	private ApplicationConfig app;
 	private static Logger logger = Logger.getLogger(ExtractCPILogs.class);
 	private static Properties properties = new Properties();
 
 	// expecting 3 parameters; application name;
-	public ExtractCPILogs(Application app) {
+	public ExtractCPILogs(ApplicationConfig app) {
 		this.app = app;
 	}
 
-	public Application getApplication() {
+	public ApplicationConfig getApplication() {
 		return this.app;
 	}
 
@@ -47,7 +47,7 @@ public class ExtractCPILogs {
 		}
 		logger.info("Application Property File: " + propertyFileName);
 
-		ExtractCPILogs ecl = new ExtractCPILogs(new Application(args[0]));
+		ExtractCPILogs ecl = new ExtractCPILogs(new ApplicationConfig(args[0]));
 		Extractable extractor = ExtractorFactory.getExtractor(ecl
 				.getApplication());
 		ArrayList<CPILog> logs = extractor.extract();

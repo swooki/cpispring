@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class XMLExtporter extends Exporter implements Exportable {
 
-	public XMLExtporter(Application app) {
+	public XMLExtporter(ApplicationConfig app) {
 		super(app);
 	}
 	

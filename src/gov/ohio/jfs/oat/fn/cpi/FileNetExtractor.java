@@ -34,36 +34,18 @@ import com.filenet.api.util.UserContext;
 public class FileNetExtractor extends Extractor implements Extractable {
 
 	private Connection conn;
-
-	private Application targetApplication;
+	private ApplicationConfig applicationConfig;
 
 	private Properties fileNetProperties = new Properties();
-	private Properties applicationProperties = new Properties();
 	private static Logger logger = Logger.getLogger(Object.class);
 	private int maxEventNum;
 
-	public void setTargetApplication(Application app) {
-		targetApplication = app;
-	}
+	public FileNetExtractor(ApplicationConfig appConfig) {
+		super(appConfig);
+		applicationConfig = appConfig;
 
-	public FileNetExtractor(Application app) {
-		super(app);
-		targetApplication = app;
-
-		String propertyFileName = getClass().getSimpleName() + ".properties";
-
-		try {
-			fileNetProperties.load(new FileInputStream(propertyFileName));
-			applicationProperties.load(new FileInputStream(targetApplication
-					.getName() + ".properties"));
-		} catch (IOException e) {
-			logger.error("Couldn't find the configuration file: "
-					+ propertyFileName);
-		}
-		conn = Factory.Connection.getConnection(fileNetProperties
-				.getProperty("CE_URI"));
-		maxEventNum = Integer.parseInt(fileNetProperties
-				.getProperty("MAX_NUM_EVENTS"));
+		conn = Factory.Connection.getConnection(appConfig.getProperty(ApplicationConfig.CE_URI));
+		maxEventNum = Integer.parseInt(appConfig.getProperty(ApplicationConfig.MAX_NUM_EVENTS));
 	}
 
 	@Override
@@ -74,18 +56,17 @@ public class FileNetExtractor extends Extractor implements Extractable {
 
 		FileNetAppInfo appInfo = null;
 
-		if (targetApplication == null) {
+		if (applicationConfig == null) {
 			throw new Exception("The target application is not assigned");
 		}
 
 		String password;
 
 		try {
-			password = CryptoUtils.decrypt(fileNetProperties
-					.getProperty("PASSWORD"));
+			password = CryptoUtils.decrypt(this.applicationConfig.getProperty(ApplicationConfig.PASSWORD));
 			Subject subject = UserContext.createSubject(conn,
-					fileNetProperties.getProperty("USERID"), password,
-					fileNetProperties.getProperty("JAAS_STANZA_NAME"));
+					this.applicationConfig.getProperty(ApplicationConfig.USERID), password,
+					this.applicationConfig.getProperty(ApplicationConfig.JAAS_STANZA_NAME));
 			UserContext.get().pushSubject(subject);
 		} catch (GeneralSecurityException e1) {
 			throw e1;
@@ -93,7 +74,7 @@ public class FileNetExtractor extends Extractor implements Extractable {
 
 		Domain dom = Factory.Domain.getInstance(conn, null);
 		ObjectStore os = Factory.ObjectStore.getInstance(dom,
-				targetApplication.getObjectStoreName());
+				applicationConfig.getProperty(ApplicationConfig.OBJECT_STORE_NAME));
 		os.refresh();
 
 		// Extract events that have been created on the given date.
@@ -104,9 +85,8 @@ public class FileNetExtractor extends Extractor implements Extractable {
 				+ "  FROM [Event] ev INNER JOIN [Document] doc ON ev.SourceObjectId = doc.id"
 				+ " WHERE IsClass(ev, GetContentEvent)"
 				+ "   AND IsClass(doc, "
-				+ targetApplication.getSourceClassName()
-				+ ")"
-				+ "   AND ev.[Creator] <> \'FileNet-P8Admin\'");
+				+ applicationConfig.getProperty(ApplicationConfig.SOURCE_CLASS_NAME)
+				+ ")" + "   AND ev.[Creator] <> \'FileNet-P8Admin\'");
 
 		SearchScope eventScope = new SearchScope(os);
 		PropertyFilter filters = new PropertyFilter();
@@ -117,9 +97,6 @@ public class FileNetExtractor extends Extractor implements Extractable {
 		IndependentObjectSet objSet = eventScope.fetchObjects(eventSql, 200,
 				null, true);
 		PageIterator pItr = objSet.pageIterator();
-
-		appInfo = FileNetAppInfoFactory.getFileNetAppInfo(targetApplication
-				.getName());
 
 		while (pItr.nextPage()) {
 
@@ -136,7 +113,7 @@ public class FileNetExtractor extends Extractor implements Extractable {
 					Event ev = (Event) obj;
 
 					// Get the values for event class
-					log.setApplication(targetApplication.getName());
+					log.setApplication(applicationConfig.getName());
 					log.setDateAccessed(ev.getProperties().getDateTimeValue(
 							"DateCreated"));
 					log.setUserAccessed(ev.getProperties().getStringValue(
@@ -145,10 +122,12 @@ public class FileNetExtractor extends Extractor implements Extractable {
 							.getIdValue("SourceObjectId").toString());
 
 					// Get the additional information from document class
-					appInfo.getTargetInfo(dom, os, log);
+					getTargetInfo(dom, os, log);
 					logs.add(log);
 
-					if (this.targetApplication.deleteAfterLog() == true) {
+					if (this.applicationConfig
+							.getProperty(ApplicationConfig.DELETE_AFTER_LOG)
+							.toUpperCase().equals(ApplicationConfig.DELETE_AFTER_LOG_YES)) {
 						ev.delete();
 						batch.add(ev, null);
 					}
@@ -163,6 +142,36 @@ public class FileNetExtractor extends Extractor implements Extractable {
 		}// while
 
 		return logs;
+	}
+
+	public void getTargetInfo(Domain dom, ObjectStore os, CPILog log) {
+		
+		PropertyFilter filters = new PropertyFilter();
+		filters.addIncludeProperty(1, null, null, "DateCreated", null);
+		filters.addIncludeProperty(1, null, null, "FIRST_NAME", null);
+		filters.addIncludeProperty(1, null, null, "LAST_NAME", null);
+
+		SearchSQL documentSql = new SearchSQL(
+				"SELECT doc.[FIRST_NAME], doc.[LAST_NAME], doc.[DateCreated]"
+						+ "  FROM [Document] doc" + " WHERE doc.[Id] = "
+						+ log.getDocumentAccessed());
+		SearchScope documentScope = new SearchScope(os);
+		IndependentObjectSet documentSet = documentScope.fetchObjects(
+				documentSql, null, filters, false);
+
+		if (!documentSet.isEmpty()) {
+
+			Iterator j = documentSet.iterator();
+			IndependentlyPersistableObject doc = (IndependentlyPersistableObject) j
+					.next();
+
+			log.setPersonalId(doc.getProperties().getStringValue("FIRST_NAME")
+					.trim()
+					+ " "
+					+ doc.getProperties().getStringValue("LAST_NAME").trim());
+			log.setDateCreated(doc.getProperties().getDateTimeValue(
+					"DateCreated"));
+		}
 	}
 
 }

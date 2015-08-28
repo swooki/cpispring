@@ -6,15 +6,17 @@ public class ExtractorFactory {
 	public static final String EXTRACTOR_TYPE_DATABASE = "DB";
 	public static final String EXTRACTOR_TYPE_TEST = "TEST";
 
-	public static Extractable getExtractor(Application app){
+	public static Extractable getExtractor(ApplicationConfig app){
 		Extractable extractor = null;
-		if(app.getExtractorType().equals(EXTRACTOR_TYPE_TEST)) {
+		String extractorType = app.getProperty(ApplicationConfig.EXTRACTOR_TYPE);
+		
+		if(extractorType.equals(EXTRACTOR_TYPE_TEST)) {
 			extractor = new TestExtractor(app); 
 		}
-		if(app.getExtractorType().equals(EXTRACTOR_TYPE_FILENET)) {
+		if(extractorType.equals(EXTRACTOR_TYPE_FILENET)) {
 			extractor = new FileNetExtractor(app); 
 		}
-		if(app.getExtractorType().equals(EXTRACTOR_TYPE_DATABASE)) {
+		if(extractorType.equals(EXTRACTOR_TYPE_DATABASE)) {
 			extractor = new DBExtractor(app); 
 		}
 		return extractor; 

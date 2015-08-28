@@ -3,19 +3,19 @@ package gov.ohio.jfs.oat.fn.cpi;
 import java.util.ArrayList;
 
 public abstract class Exporter implements Exportable {
-	private Application app;
+	private ApplicationConfig app;
 
 	private Exporter() {};
 	
-	public Exporter(Application app) {
+	public Exporter(ApplicationConfig app) {
 		this.app = app;
 	}
 	
-	public Application getApplication() {
+	public ApplicationConfig getApplication() {
 		return app;
 	}
 
-	public void setApplication(Application app) {
+	public void setApplication(ApplicationConfig app) {
 		this.app = app;
 	}
 	

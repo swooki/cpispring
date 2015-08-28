@@ -3,13 +3,13 @@ package gov.ohio.jfs.oat.fn.cpi;
 import java.util.ArrayList;
 
 public class DBExtractor implements Extractable {
-	private Application app;
+	private ApplicationConfig app;
 	
 	private DBExtractor() {
 		
 	}
 	
-	public DBExtractor(Application app) {
+	public DBExtractor(ApplicationConfig app) {
 		this.app = app;
 	}
 
