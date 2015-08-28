@@ -22,11 +22,10 @@ public class Application {
 	private String exporterType;
 	private static Logger logger = Logger.getLogger(Application.class);
 
-	
 	private String objectStoreName;
 	private String sourceClassName;
 	private boolean deleteAfterLog = false;
-	
+
 	private Properties properties = new Properties();
 
 	private Application() {
@@ -45,7 +44,7 @@ public class Application {
 		logger.info(EXTRACTOR_TYPE + ": " + extractorType);
 		this.exporterType = properties.getProperty(EXPORTER_TYPE);
 		logger.info(EXPORTER_TYPE + ": " + exporterType);
-		
+
 		this.objectStoreName = properties.getProperty(OBJECT_STORE_NAME);
 		this.sourceClassName = properties.getProperty(SOURCE_CLASS_NAME);
 		this.deleteAfterLog = (properties.getProperty(DELETE_AFTER_LOG)
