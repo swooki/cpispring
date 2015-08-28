@@ -23,15 +23,12 @@ public class ApplicationConfig {
 	public static final String DELETE_AFTER_LOG_YES = "YES";
 	public static final String DELETE_AFTER_LOG_NO = "NO";
 
-	
 	public static final String CE_URI = "CE_URI";
 	public static final String USERID = "USERID";
 	public static final String PASSWORD = "PASSWORD";
 	public static final String JAAS_STANZA_NAME = "JAAS_STANZA_NAME";
 	public static final String MAX_NUM_EVENTS = "MAX_NUM_EVENTS";
 	
-	
-
 	// Property names for CSV Exporter
 	public static final String DATE_FORMAT = "DATE_FORMAT";
 	public static final String MODE = "MODE";
