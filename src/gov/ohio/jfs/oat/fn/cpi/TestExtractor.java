@@ -42,7 +42,6 @@ public class TestExtractor implements Extractable {
 		log.setDateAccessed(new Date());
 		log.setDateCreated(new Date());
 		log.setDocumentAccessed("DOC");
-//		log.setPersonalId("ID:" + dummyId.format(new Date()));
 		log.setPersonalId(new BigInteger(130, random).toString(32));
 		log.setUserAccessed("KWONS");
 

@@ -20399,3 +20399,1246 @@ FileNetP8Engine {
 2015-08-31 09:12:35,974 INFO   [ExtractCPILogs] Application Property File: FN_UIDMS.properties
 2015-08-31 09:12:36,457 INFO   [ExtractCPILogs] 25000 logs are extracted.
 2015-08-31 09:12:36,863 INFO   [ExtractCPILogs] 25000 logs are exported.
+2015-08-31 10:59:25,686 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2015-08-31 10:59:25,686 DEBUG  [ExtractCPILogs] FN_UIDMS.properties
+2015-08-31 10:59:25,686 INFO   [ExtractCPILogs] Application Property File: FN_UIDMS.properties
+2015-08-31 10:59:25,764 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\KWONS\workspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2015-08-31 10:59:25,779 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2015-08-31 10:59:25,795 DEBUG  [ConfigValueLookup] Configuration for:Config.AutoRefreshEnabled value:null applied
+2015-08-31 10:59:25,795 DEBUG  [ConfigValueLookup] Configuration for:com.filenet.engine.LoggerRefreshInterval value:null applied
+2015-08-31 10:59:25,889 DEBUG  [ConfigValueLookup] Configuration for:FileNet.EJB.ContextProperties value:null applied
+2015-08-31 10:59:25,889 DEBUG  [J2EEUtil] JVM global FileNet.EJB.ContextProperties: null
+2015-08-31 10:59:25,889 DEBUG  [J2EEUtil] J2EEUtil.getInitialContextWithParameters JNDI Environment (a): {}
+2015-08-31 10:59:25,889 DEBUG  [J2EEUtil] J2EEUtil.getInitialContextWithParameters caught and ignored (harmless): javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+2015-08-31 10:59:25,889 DEBUG  [J2EEUtil] J2EEUtil.getInitialContextWithParameters computed java.naming.factory.initial: null
+2015-08-31 10:59:25,889 DEBUG  [J2EEUtil] J2EEUtil.getInitialContextWithParameters JNDI Environment (b): {}
+2015-08-31 10:59:25,889 DEBUG  [J2EEUtil] getInitialContextFactory() failed because of the following error: javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+2015-08-31 10:59:25,889 DEBUG  [J2EEUtil] JNDI did not reveal an appserver, so looking for known classes on the classpath
+2015-08-31 10:59:25,889 DEBUG  [J2EEUtil] WebSphere class com.ibm.websphere.naming.WsnInitialContextFactory not used because of the following error: java.lang.ClassNotFoundException: com.ibm.websphere.naming.WsnInitialContextFactory
+2015-08-31 10:59:25,889 DEBUG  [J2EEUtil] WebLogic class weblogic.jndi.WLInitialContextFactory not used because of the following error: java.lang.ClassNotFoundException: weblogic.jndi.WLInitialContextFactory
+2015-08-31 10:59:25,889 DEBUG  [J2EEUtil] JBoss class org.jnp.interfaces.NamingContextFactory not used because of the following error: java.lang.ClassNotFoundException: org.jnp.interfaces.NamingContextFactory
+2015-08-31 10:59:25,889 DEBUG  [J2EEUtil] The code has NOT detected a need to introduce specific application server logic and is defaulting to using standard J2EE calls
+2015-08-31 10:59:25,889 DEBUG  [JaasConfiguration] Default JAAS Configuration: 
+FileNetP8WSI {
+    com.filenet.api.util.WSILoginModule required;
+}
+ 
+FileNetP8 {
+    com.filenet.api.util.WSILoginModule required;
+}
+ 
+FileNetP8Server {
+    com.filenet.api.util.WSILoginModule required;
+}
+ 
+FileNetP8Engine {
+    com.filenet.api.util.WSILoginModule required;
+}
+ 
+2015-08-31 10:59:25,889 DEBUG  [ConfigValueLookup] Configuration for:com.filenet.api.useLocalAuthentication value:null applied
+2015-08-31 10:59:25,889 DEBUG  [JaasConfiguration] No configured JAAS entry found for: 'FileNetP8WSI'...trying 'other'
+2015-08-31 10:59:25,889 DEBUG  [JaasConfiguration] No configured JAAS entry found for: 'other'
+2015-08-31 10:59:25,889 DEBUG  [JaasConfiguration] Default JAAS entry found for:FileNetP8WSI
+2015-08-31 10:59:25,904 DEBUG  [UserContext] UserContext <32184542> created in Thread  <29655272>
+2015-08-31 10:59:26,107 DEBUG  [ConfigValueLookup] Configuration for:CheetahBCMode value:false applied
+2015-08-31 10:59:26,154 DEBUG  [SessionLocator] Server Session constructor will not be used:java.lang.ClassNotFoundException: com.filenet.engine.context.ServerSession
+2015-08-31 10:59:26,154 DEBUG  [SessionLocator] EJB Session constructor com.filenet.apiimpl.transport.ejb.EJBSession found
+2015-08-31 10:59:26,154 DEBUG  [SessionLocator] No session entry found in the cache for http://ax-svc-03202.odjfs.state.oh.us:9080/wsi/fncews40mtom/
+2015-08-31 10:59:26,154 DEBUG  [SessionLocator] SessionLocator.createNewSoapSession called with providerURL http://ax-svc-03202.odjfs.state.oh.us:9080 path /wsi/FNCEWS40MTOM/
+2015-08-31 10:59:26,154 DEBUG  [SessionLocator] Instantiating a SoapSession instance using uri http://ax-svc-03202.odjfs.state.oh.us:9080/wsi/FNCEWS40MTOM/
+2015-08-31 10:59:26,185 DEBUG  [ServiceSessionNst] IBM FileNet P8 CE Java API (5.1.0 / dap501.000.004.020)
+2015-08-31 10:59:26,185 DEBUG  [ConfigValueLookup] Configuration for:com.filenet.engine.init.DefaultLocale value:en-us applied
+2015-08-31 10:59:26,185 DEBUG  [ConfigurationParameters] loadMap: skipping unknown key=ProductVersion
+2015-08-31 10:59:26,185 DEBUG  [ConfigurationParameters] loadMap: skipping unknown key=BuildVersion
+2015-08-31 10:59:26,185 DEBUG  [ConfigurationParameters] loadMap: skipping unknown key=ProductName
+2015-08-31 10:59:26,185 DEBUG  [SessionLocator] Remote session is returned and will be wrapped in a session handle for retry conditions
+2015-08-31 10:59:26,185 DEBUG  [ConfigValueLookup] Configuration for:MaximumRetry value:null applied
+2015-08-31 10:59:26,185 DEBUG  [ConfigValueLookup] Configuration for:ExpireSessionInterval value:null applied
+2015-08-31 10:59:26,185 DEBUG  [ConfigValueLookup] Configuration for:BuildVersion value:dap501.000.004.020 applied
+2015-08-31 10:59:26,201 DEBUG  [ConfigValueLookup] Configuration for:TraceReaderClass value: applied
+2015-08-31 10:59:26,201 DEBUG  [ConfigValueLookup] Configuration for:TraceMaxChars value:null applied
+2015-08-31 10:59:26,201 DEBUG  [ConfigValueLookup] Configuration for:TraceMaxBytes value:null applied
+2015-08-31 10:59:26,201 DEBUG  [ConfigValueLookup] Configuration for:TraceByteRadix value:null applied
+2015-08-31 10:59:26,201 DEBUG  [ConfigValueLookup] Configuration for:TraceOutputProperties value: applied
+2015-08-31 10:59:26,216 DEBUG  [Session] <getObjectsRequest clientCaller="com.sun.org.apache.xalan.internal.xsltc.trax.TransformerImpl.transformIdentity(Unknown Source)" cacheAllowed="true" correlationId="1" rid="1">
+  <objectReference type="GlobalIdentity" classIdentity="ObjectStore" identity="UC_DEV_OS" rid="2"/>
+</getObjectsRequest>
+2015-08-31 10:59:26,232 DEBUG  [ServiceSessionNst] Serialize GetObjectsRequest/GetObjectsResponse using ServiceSessionNst@987d26
+2015-08-31 10:59:26,232 DEBUG  [ServiceSessionNst] URL openConnection done
+2015-08-31 10:59:26,232 DEBUG  [ConfigValueLookup] Configuration for:FileNet.WSI.HttpChunkSize value:null applied
+2015-08-31 10:59:26,232 DEBUG  [ConfigValueLookup] Configuration for:FileNet.WSI.TransportConnectionTimeout value:null applied
+2015-08-31 10:59:26,232 DEBUG  [AttachmentHelperNst] unique piece: 84896070f88802bc-14f84451d98
+2015-08-31 10:59:26,232 DEBUG  [AttachmentHelperNst] Attachment 0 content ID: v0-84896070f88802bc-14f84451d98@mtom.p8ce.filenet.com
+2015-08-31 10:59:26,232 DEBUG  [ServiceSessionNst] HTTP request properties {Date=[Mon, 31 Aug 2015 14:59:26 +0000], User-Agent=[IBM FileNet P8 CE Java API (5.1.0 / dap501.000.004.020)], Content-Type=[application/soap+xml]}
+2015-08-31 10:59:26,247 DEBUG  [ServiceSessionNst] HTTP connect done
+2015-08-31 10:59:26,247 DEBUG  [ServiceSessionNst] HTTP getOutputStream done
+2015-08-31 10:59:26,247 DEBUG  [ConfigValueLookup] Configuration for:FileNet.WSI.stax.XMLOutputFactory value:com.ibm.xml.xlxp.api.stax.XMLOutputFactoryImpl applied
+2015-08-31 10:59:26,341 DEBUG  [ConfigValueLookup] Configuration for:WSITypeAttributeRequired value:null applied
+2015-08-31 10:59:26,341 DEBUG  [ConfigValueLookup] Configuration for:WSIDefaultNamespacePermitted value:null applied
+2015-08-31 10:59:26,341 DEBUG  [ClientOperation] Using Principal<FileNet-P8Admin> from UserContext
+2015-08-31 10:59:26,357 DEBUG  [ServiceSessionNst] SOAP /Envelope done
+2015-08-31 10:59:26,357 DEBUG  [ServiceSessionNst] HTTP outputStream closed
+2015-08-31 10:59:26,357 DEBUG  [ServiceSessionNst] Deserialize GetObjectsRequest/GetObjectsResponse using ServiceSessionNst@987d26
+2015-08-31 10:59:41,473 DEBUG  [ServiceSessionNst] HTTP getInputStream done
+2015-08-31 10:59:41,473 DEBUG  [ServiceSessionNst] HTTP response properties {null=[HTTP/1.1 200 OK], Content-Language=[en-US], Date=[Mon, 31 Aug 2015 14:59:41 GMT], Transfer-Encoding=[chunked], SOAPAction=[""], User-Agent=[IBM FileNet P8 CE Java API (5.1.0 / dap501.000.004.020)], Content-Type=[application/soap+xml], Server=[WebSphere Application Server/7.0]}
+2015-08-31 10:59:41,473 DEBUG  [ConfigValueLookup] Configuration for:FileNet.WSI.stax.XMLInputFactory value:com.ibm.xml.xlxp.api.stax.XMLInputFactoryImpl applied
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=START_TOKEN name=Envelope depth=0
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=START_TOKEN name=Body depth=1
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=START_TOKEN name=GetObjectsResponse depth=2
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=START_TOKEN name=ObjectResponse depth=3
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=START_TOKEN name=Object depth=4
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,552 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,568 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=Object depth=4
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=ObjectResponse depth=3
+2015-08-31 10:59:41,583 DEBUG  [TokenReaderNst] token=END_TOKEN name=GetObjectsResponse depth=2
+2015-08-31 10:59:41,599 DEBUG  [Session] <getObjectsResponse elapsed="15363" correlationId="1" rid="1">
+  <value type="ObjectStore" updateSequenceNumber="34" accessAllowed="569835523" rid="2">
+    <objectReference type="GlobalIdentity" classIdentity="ObjectStore" identity="{FF86782B-63B4-4703-A3DF-C8E27F1BC5B4}" rid="3"/>
+    <properties type="Properties" rid="4">
+      <property type="PropertyInteger32" name="FolderCacheMaxEntries" dirty="false" access="7" rid="5">
+        <value>8192</value>
+      </property>
+      <property type="PropertyEngineObject" name="ClassDescription" dirty="false" access="1" rid="6">
+        <value type="GlobalIdentity" classIdentity="ClassDescription" identity="{01A3A8A9-7AEC-11D1-A31B-0020AF9FBB1C}" rid="7"/>
+      </property>
+      <property type="PropertyEngineObjectList" name="Permissions" dirty="false" access="7" rid="8">
+        <value type="UnevaluatedPropertyValue" propertyName="Permissions" rid="9">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="PropertyTemplates" dirty="false" access="1" rid="10">
+        <value type="UnevaluatedPropertyValue" propertyName="PropertyTemplates" rid="11">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyInteger32" name="FullTextRowMax" dirty="false" access="7" rid="12">
+        <value null="true"/>
+      </property>
+      <property type="PropertyEngineObjectList" name="AddOnInstallationRecords" dirty="false" access="1" rid="13">
+        <value type="UnevaluatedPropertyValue" propertyName="AddOnInstallationRecords" rid="14">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyInteger32" name="AuditLevel" dirty="false" access="7" rid="15">
+        <value>1</value>
+      </property>
+      <property type="PropertyString" name="Name" dirty="false" access="1" rid="16">
+        <value>UC_DEV_OS</value>
+      </property>
+      <property type="PropertyBoolean" name="TextSearchEnabled" dirty="false" access="7" rid="17">
+        <value>false</value>
+      </property>
+      <property type="PropertyString" name="CBRLocale" dirty="false" access="7" rid="18">
+        <value null="true"/>
+      </property>
+      <property type="PropertyDateTime" name="DateLastModified" dirty="false" access="1" rid="19">
+        <value>2015-06-19T12:17:01.831Z</value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="AuditProcessingBookmarks" dirty="false" access="1" rid="20">
+        <value type="UnevaluatedPropertyValue" propertyName="AuditProcessingBookmarks" rid="21">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyInteger32" name="ContentAccessRecordingLevel" dirty="false" access="7" rid="22">
+        <value>-1</value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="SecurityPolicies" dirty="false" access="1" rid="23">
+        <value type="UnevaluatedPropertyValue" propertyName="SecurityPolicies" rid="24">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="ChoiceLists" dirty="false" access="1" rid="25">
+        <value type="UnevaluatedPropertyValue" propertyName="ChoiceLists" rid="26">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyInteger32" name="CBRSearchType" dirty="false" access="1" rid="27">
+        <value>0</value>
+      </property>
+      <property type="PropertyString" name="SchemaVersion" dirty="false" access="1" rid="28">
+        <value>17.1.24</value>
+      </property>
+      <property type="PropertyString" name="DatabaseIndexStorageLocation" dirty="false" access="7" rid="29">
+        <value>UCDEVOS_INDX_TS</value>
+      </property>
+      <property type="PropertyId" name="Id" dirty="false" access="1" rid="30">
+        <value type="Id">{FF86782B-63B4-4703-A3DF-C8E27F1BC5B4}</value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="DocumentClassificationActions" dirty="false" access="1" rid="31">
+        <value type="UnevaluatedPropertyValue" propertyName="DocumentClassificationActions" rid="32">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyId" name="ObjectStoreId" dirty="false" access="1" rid="33">
+        <value type="Id">{FF86782B-63B4-4703-A3DF-C8E27F1BC5B4}</value>
+      </property>
+      <property type="PropertyInteger32" name="ObjectSecurityCacheEntryTTL" dirty="false" access="7" rid="34">
+        <value>600</value>
+      </property>
+      <property type="PropertyString" name="DatabaseTableStorageLocation" dirty="false" access="7" rid="35">
+        <value>UCDEVOS_DATA_TS</value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="ChangePreprocessorActions" dirty="false" access="1" rid="36">
+        <value type="UnevaluatedPropertyValue" propertyName="ChangePreprocessorActions" rid="37">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="EventActions" dirty="false" access="1" rid="38">
+        <value type="UnevaluatedPropertyValue" propertyName="EventActions" rid="39">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyInteger32" name="DefaultReservationType" dirty="false" access="7" rid="40">
+        <value>32</value>
+      </property>
+      <property type="PropertyInteger32" name="FolderCacheReapFrequency" dirty="false" access="7" rid="41">
+        <value>0</value>
+      </property>
+      <property type="PropertyEngineObject" name="VerityDomainConfiguration" dirty="false" access="7" rid="42">
+        <value type="UnevaluatedPropertyValue" propertyName="VerityDomainConfiguration" rid="43">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyInteger32" name="FolderCacheMaxAgeDelta" dirty="false" access="7" rid="44">
+        <value>0</value>
+      </property>
+      <property type="PropertyInteger32" name="MaxQueryTimeLimit" dirty="false" access="7" rid="45">
+        <value>0</value>
+      </property>
+      <property type="PropertyString" name="Creator" dirty="false" access="1" rid="46">
+        <value>FOUTR</value>
+      </property>
+      <property type="PropertyStringList" name="LocaleNames" dirty="false" access="1" rid="47">
+        <value type="StringList" internalClassType="java.lang.String" isDirty="false" isReadOnly="false" hasBeenAttached="true" rid="48">
+          <originalList size="30" rid="49">
+            <entry>en-us</entry>
+            <entry>zh-cn</entry>
+            <entry>ja</entry>
+            <entry>tr</entry>
+            <entry>ko</entry>
+            <entry>nl</entry>
+            <entry>bg</entry>
+            <entry>pt-br</entry>
+            <entry>cs</entry>
+            <entry>he</entry>
+            <entry>th</entry>
+            <entry>it</entry>
+            <entry>fr</entry>
+            <entry>ru</entry>
+            <entry>ro</entry>
+            <entry>nb-no</entry>
+            <entry>fi</entry>
+            <entry>ar</entry>
+            <entry>zh-tw</entry>
+            <entry>sv</entry>
+            <entry>ca</entry>
+            <entry>pt</entry>
+            <entry>pl</entry>
+            <entry>sl</entry>
+            <entry>sk</entry>
+            <entry>de</entry>
+            <entry>hu</entry>
+            <entry>es</entry>
+            <entry>da</entry>
+            <entry>hr</entry>
+          </originalList>
+          <currentList size="30" rid="50">
+            <entry>en-us</entry>
+            <entry>zh-cn</entry>
+            <entry>ja</entry>
+            <entry>tr</entry>
+            <entry>ko</entry>
+            <entry>nl</entry>
+            <entry>bg</entry>
+            <entry>pt-br</entry>
+            <entry>cs</entry>
+            <entry>he</entry>
+            <entry>th</entry>
+            <entry>it</entry>
+            <entry>fr</entry>
+            <entry>ru</entry>
+            <entry>ro</entry>
+            <entry>nb-no</entry>
+            <entry>fi</entry>
+            <entry>ar</entry>
+            <entry>zh-tw</entry>
+            <entry>sv</entry>
+            <entry>ca</entry>
+            <entry>pt</entry>
+            <entry>pl</entry>
+            <entry>sl</entry>
+            <entry>sk</entry>
+            <entry>de</entry>
+            <entry>hu</entry>
+            <entry>es</entry>
+            <entry>da</entry>
+            <entry>hr</entry>
+          </currentList>
+          <deletedList size="0" rid="51"/>
+          <listMode type="ListMode" value="0" name="Replace" rid="52"/>
+        </value>
+      </property>
+      <property type="PropertyInteger32" name="DatabaseType" dirty="false" access="1" rid="53">
+        <value>2</value>
+      </property>
+      <property type="PropertyString" name="JNDIXADataSource" dirty="false" access="7" rid="54">
+        <value>UC_DEV_OS_DSXA</value>
+      </property>
+      <property type="PropertyString" name="TextSearchIndexingLanguage" dirty="false" access="7" rid="55">
+        <value null="true"/>
+      </property>
+      <property type="PropertyString" name="SymbolicName" dirty="false" access="7" rid="56">
+        <value>UC_DEV_OS</value>
+      </property>
+      <property type="PropertyInteger32" name="SecurityDescCacheMaxEntries" dirty="false" access="7" rid="57">
+        <value>8192</value>
+      </property>
+      <property type="PropertyBoolean" name="ForceCaseInsensitiveSearch" dirty="false" access="7" rid="58">
+        <value>true</value>
+      </property>
+      <property type="PropertyEngineObject" name="Domain" dirty="false" access="1" rid="59">
+        <value type="GlobalIdentity" classIdentity="Domain" identity="{9CD0E9A3-F6A1-4888-B5C9-E40F70DCEE86}" rid="60"/>
+      </property>
+      <property type="PropertyInteger32" name="DefaultQueryTimeLimit" dirty="false" access="7" rid="61">
+        <value>0</value>
+      </property>
+      <property type="PropertyEngineObject" name="Site" dirty="false" access="7" rid="62">
+        <value type="GlobalIdentity" classIdentity="Site" identity="{07539A4C-DD66-492B-8A0B-BC2363C9BDB9}" rid="63"/>
+      </property>
+      <property type="PropertyEngineObjectSet" name="StoragePolicies" dirty="false" access="1" rid="64">
+        <value type="UnevaluatedPropertyValue" propertyName="StoragePolicies" rid="65">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="AuditDispositionPolicies" dirty="false" access="1" rid="66">
+        <value type="UnevaluatedPropertyValue" propertyName="AuditDispositionPolicies" rid="67">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyString" name="DatabaseLOBStorageLocation" dirty="false" access="7" rid="68">
+        <value>UCDEVOS_DATA_TS</value>
+      </property>
+      <property type="PropertyString" name="DisplayName" dirty="false" access="7" rid="69">
+        <value>UC_DEV_OS</value>
+      </property>
+      <property type="PropertyString" name="JNDIDataSource" dirty="false" access="7" rid="70">
+        <value>UC_DEV_OS_DS</value>
+      </property>
+      <property type="PropertyInteger32" name="ObjectSecurityCacheMaxEntries" dirty="false" access="7" rid="71">
+        <value>8192</value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="TopFolders" dirty="false" access="1" rid="72">
+        <value type="UnevaluatedPropertyValue" propertyName="TopFolders" rid="73">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObject" name="RootFolder" dirty="false" access="1" rid="74">
+        <value type="UnevaluatedPropertyValue" propertyName="RootFolder" rid="75">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="WorkflowDefinitions" dirty="false" access="1" rid="76">
+        <value type="UnevaluatedPropertyValue" propertyName="WorkflowDefinitions" rid="77">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyInteger32" name="FullTextRowDefault" dirty="false" access="7" rid="78">
+        <value null="true"/>
+      </property>
+      <property type="PropertyInteger32" name="VerityPartitionInterval" dirty="false" access="7" rid="79">
+        <value>0</value>
+      </property>
+      <property type="PropertyString" name="LocaleName" dirty="false" access="1" rid="80">
+        <value>en-us</value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="XMLPropertyMappingScripts" dirty="false" access="1" rid="81">
+        <value type="UnevaluatedPropertyValue" propertyName="XMLPropertyMappingScripts" rid="82">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyString" name="DatabaseSchemaName" dirty="false" access="7" rid="83">
+        <value null="true"/>
+      </property>
+      <property type="PropertyEngineObjectSet" name="RootClassDefinitions" dirty="false" access="1" rid="84">
+        <value type="UnevaluatedPropertyValue" propertyName="RootClassDefinitions" rid="85">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="StorageAreas" dirty="false" access="1" rid="86">
+        <value type="UnevaluatedPropertyValue" propertyName="StorageAreas" rid="87">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectList" name="PartitioningProperties" dirty="false" access="7" rid="88">
+        <value type="UnevaluatedPropertyValue" propertyName="PartitioningProperties" rid="89">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyString" name="LastModifier" dirty="false" access="1" rid="90">
+        <value>KURUGS</value>
+      </property>
+      <property type="PropertyInteger32" name="IndexingFailureRecordingLevel" dirty="false" access="7" rid="91">
+        <value>0</value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="DocumentLifecycleActions" dirty="false" access="1" rid="92">
+        <value type="UnevaluatedPropertyValue" propertyName="DocumentLifecycleActions" rid="93">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="ClassDescriptions" dirty="false" access="1" rid="94">
+        <value type="UnevaluatedPropertyValue" propertyName="ClassDescriptions" rid="95">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyBoolean" name="TableOverflowEnabled" dirty="false" access="7" rid="96">
+        <value>false</value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="TableDefinitions" dirty="false" access="1" rid="97">
+        <value type="UnevaluatedPropertyValue" propertyName="TableDefinitions" rid="98">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="IndexAreas" dirty="false" access="1" rid="99">
+        <value type="UnevaluatedPropertyValue" propertyName="IndexAreas" rid="100">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyString" name="VerityPartitionProperty" dirty="false" access="7" rid="101">
+        <value null="true"/>
+      </property>
+      <property type="PropertyEngineObjectSet" name="Subscriptions" dirty="false" access="1" rid="102">
+        <value type="UnevaluatedPropertyValue" propertyName="Subscriptions" rid="103">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyString" name="DescriptiveText" dirty="false" access="7" rid="104">
+        <value>UC_DEV_OS</value>
+      </property>
+      <property type="PropertyBoolean" name="CBRPreFilterEnabled" dirty="false" access="7" rid="105">
+        <value>false</value>
+      </property>
+      <property type="PropertyDateTime" name="DateCreated" dirty="false" access="1" rid="106">
+        <value>2012-01-24T19:01:13.083Z</value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="DocumentLifecyclePolicies" dirty="false" access="1" rid="107">
+        <value type="UnevaluatedPropertyValue" propertyName="DocumentLifecyclePolicies" rid="108">
+          <parent ref="3"/>
+        </value>
+      </property>
+    </properties>
+  </value>
+</getObjectsResponse>
+2015-08-31 10:59:41,599 DEBUG  [SessionLocator] No session entry found in the cache for http://ax-svc-03202.odjfs.state.oh.us:9080/wsi/fncews40mtom/
+2015-08-31 10:59:41,599 DEBUG  [SessionLocator] SessionLocator.createNewSoapSession called with providerURL http://ax-svc-03202.odjfs.state.oh.us:9080 path /wsi/FNCEWS40MTOM/
+2015-08-31 10:59:41,599 DEBUG  [SessionLocator] Instantiating a SoapSession instance using uri http://ax-svc-03202.odjfs.state.oh.us:9080/wsi/FNCEWS40MTOM/
+2015-08-31 10:59:41,599 DEBUG  [SessionLocator] Remote session is returned and will be wrapped in a session handle for retry conditions
+2015-08-31 10:59:41,615 DEBUG  [Session] <executeSearchRequest clientCaller="com.sun.org.apache.xalan.internal.xsltc.trax.TransformerImpl.transformIdentity(Unknown Source)" continueable="true" maxElements="200" rid="1">
+  <search type="RepositorySearch" searchSQL="SELECT ev.[DateCreated], ev.[Creator], ev.[SourceObjectId]  FROM [Event] ev INNER JOIN [Document] doc ON ev.SourceObjectId = doc.id WHERE IsClass(ev, GetContentEvent)   AND IsClass(doc, UIDocument)   AND ev.[Creator] &lt;&gt; 'FileNet-P8Admin'" rid="2"/>
+  <searchScope type="ObjectStoreScope" rid="3">
+    <objectStore type="GlobalIdentity" classIdentity="ObjectStore" identity="{FF86782B-63B4-4703-A3DF-C8E27F1BC5B4}" rid="4"/>
+  </searchScope>
+  <searchMode type="SearchMode" value="0" rid="5"/>
+</executeSearchRequest>
+2015-08-31 10:59:41,615 DEBUG  [ServiceSessionNst] Serialize ExecuteSearchRequest/ExecuteSearchResponse using ServiceSessionNst@12c4a12
+2015-08-31 10:59:41,615 DEBUG  [ServiceSessionNst] URL openConnection done
+2015-08-31 10:59:41,615 DEBUG  [AttachmentHelperNst] unique piece: 672bd70bece68d8e-14f844559af
+2015-08-31 10:59:41,615 DEBUG  [AttachmentHelperNst] Attachment 0 content ID: v0-672bd70bece68d8e-14f844559af@mtom.p8ce.filenet.com
+2015-08-31 10:59:41,615 DEBUG  [ServiceSessionNst] HTTP request properties {Date=[Mon, 31 Aug 2015 14:59:41 +0000], User-Agent=[IBM FileNet P8 CE Java API (5.1.0 / dap501.000.004.020)], Content-Type=[application/soap+xml]}
+2015-08-31 10:59:41,630 DEBUG  [ServiceSessionNst] HTTP connect done
+2015-08-31 10:59:41,630 DEBUG  [ServiceSessionNst] HTTP getOutputStream done
+2015-08-31 10:59:41,630 DEBUG  [ClientOperation] Using Principal<FileNet-P8Admin> from UserContext
+2015-08-31 10:59:41,630 DEBUG  [ServiceSessionNst] SOAP /Envelope done
+2015-08-31 10:59:41,630 DEBUG  [ServiceSessionNst] HTTP outputStream closed
+2015-08-31 10:59:41,630 DEBUG  [ServiceSessionNst] Deserialize ExecuteSearchRequest/ExecuteSearchResponse using ServiceSessionNst@12c4a12
+2015-08-31 10:59:41,630 DEBUG  [ServiceSessionNst] HTTP getInputStream done
+2015-08-31 10:59:41,630 DEBUG  [ServiceSessionNst] HTTP response properties {null=[HTTP/1.1 200 OK], Content-Language=[en-US], Date=[Mon, 31 Aug 2015 14:59:41 GMT], Transfer-Encoding=[chunked], SOAPAction=[""], User-Agent=[IBM FileNet P8 CE Java API (5.1.0 / dap501.000.004.020)], Content-Type=[multipart/related; boundary=A-B--MIME-BOUNDARY--e78e05e279b37ced-14f844559cf--Y-Z; type="application/xop+xml"; start-info="application/soap+xml"; start="<v0-e78e05e279b37ced-14f844559cf@mtom.p8ce.filenet.com>"], Server=[WebSphere Application Server/7.0]}
+2015-08-31 10:59:41,630 DEBUG  [ConfigValueLookup] Configuration for:FileNet.WSI.DeserializationBufferSize value:null applied
+2015-08-31 10:59:41,630 DEBUG  [ConfigValueLookup] Configuration for:FileNet.WSI.SpillCutover value:null applied
+2015-08-31 10:59:41,646 DEBUG  [MultipartInputStreamManager] MIME boundary: A-B--MIME-BOUNDARY--e78e05e279b37ced-14f844559cf--Y-Z
+2015-08-31 10:59:41,646 DEBUG  [MultipartInputStreamManager] Master buffer size: 16384
+2015-08-31 10:59:41,646 DEBUG  [MultipartInputStreamManager] instantiated reference to part <v0-e78e05e279b37ced-14f844559cf@mtom.p8ce.filenet.com>; 7400704
+2015-08-31 10:59:41,646 DEBUG  [MultipartInputStreamManager] instantiated reference to part <v0-e78e05e279b37ced-14f844559cf@mtom.p8ce.filenet.com>; 2969251
+2015-08-31 10:59:41,646 DEBUG  [MultipartInputStreamManager] found part in stream <v0-e78e05e279b37ced-14f844559cf@mtom.p8ce.filenet.com>; 2969251
+2015-08-31 10:59:41,646 DEBUG  [MultipartInputStreamManager] activating part <v0-e78e05e279b37ced-14f844559cf@mtom.p8ce.filenet.com>; 7400704
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=START_TOKEN name=Envelope depth=0
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=START_TOKEN name=Body depth=1
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=START_TOKEN name=ExecuteSearchResponse depth=2
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=START_TOKEN name=Object depth=3
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=4
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=5
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=CONTENT depth=5
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=5
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=4
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=4
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=5
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=CONTENT depth=5
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=5
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=4
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=4
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=5
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=CONTENT depth=5
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=5
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=4
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=END_TOKEN name=Object depth=3
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=START_TOKEN name=CollectionTerminator depth=3
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=END_TOKEN name=CollectionTerminator depth=3
+2015-08-31 10:59:41,646 DEBUG  [TokenReaderNst] token=END_TOKEN name=ExecuteSearchResponse depth=2
+2015-08-31 10:59:41,646 DEBUG  [Session] <executeSearchResponse elapsed="41" rid="1">
+  <value type="SubSet" stale="false" classType="com.filenet.api.core.EngineObject" rid="2">
+    <list size="1" rid="3">
+      <entry type="GetContentEvent" updateSequenceNumber="0" accessAllowed="995587" rid="4">
+        <objectReference type="RepositoryIdentity" classIdentity="GetContentEvent" id="{68C3DE42-A822-41DF-8CF2-317B45464BB2}" rid="5">
+          <objectStore type="GlobalIdentity" classIdentity="ObjectStore" identity="{FF86782B-63B4-4703-A3DF-C8E27F1BC5B4}" rid="6"/>
+        </objectReference>
+        <properties type="Properties" rid="7">
+          <property type="PropertyString" name="Creator" dirty="false" access="1" rid="8">
+            <value>KWONS</value>
+          </property>
+          <property type="PropertyId" name="SourceObjectId" dirty="false" access="1" rid="9">
+            <value type="Id">{818A22CF-75BB-49E8-A2E1-2F35718F87D9}</value>
+          </property>
+          <property type="PropertyDateTime" name="DateCreated" dirty="false" access="1" rid="10">
+            <value>2015-08-24T19:27:34.330Z</value>
+          </property>
+        </properties>
+      </entry>
+    </list>
+    <paging type="DefaultPaging" rid="11"/>
+  </value>
+</executeSearchResponse>
+2015-08-31 10:59:41,646 DEBUG  [SessionLocator] No session entry found in the cache for http://ax-svc-03202.odjfs.state.oh.us:9080/wsi/fncews40mtom/
+2015-08-31 10:59:41,646 DEBUG  [SessionLocator] SessionLocator.createNewSoapSession called with providerURL http://ax-svc-03202.odjfs.state.oh.us:9080 path /wsi/FNCEWS40MTOM/
+2015-08-31 10:59:41,646 DEBUG  [SessionLocator] Instantiating a SoapSession instance using uri http://ax-svc-03202.odjfs.state.oh.us:9080/wsi/FNCEWS40MTOM/
+2015-08-31 10:59:41,646 DEBUG  [SessionLocator] Remote session is returned and will be wrapped in a session handle for retry conditions
+2015-08-31 10:59:41,646 DEBUG  [Session] <getObjectsRequest clientCaller="com.sun.org.apache.xalan.internal.xsltc.trax.TransformerImpl.transformIdentity(Unknown Source)" cacheAllowed="true" correlationId="1" rid="1">
+  <objectReference type="GlobalIdentity" classIdentity="Domain" identity="{9CD0E9A3-F6A1-4888-B5C9-E40F70DCEE86}" rid="2"/>
+</getObjectsRequest>
+2015-08-31 10:59:41,646 DEBUG  [ServiceSessionNst] Serialize GetObjectsRequest/GetObjectsResponse using ServiceSessionNst@12d78bd
+2015-08-31 10:59:41,646 DEBUG  [ServiceSessionNst] URL openConnection done
+2015-08-31 10:59:41,646 DEBUG  [AttachmentHelperNst] unique piece: 350b22d4ae2acc7f-14f844559ce
+2015-08-31 10:59:41,646 DEBUG  [AttachmentHelperNst] Attachment 0 content ID: v0-350b22d4ae2acc7f-14f844559ce@mtom.p8ce.filenet.com
+2015-08-31 10:59:41,646 DEBUG  [ServiceSessionNst] HTTP request properties {Date=[Mon, 31 Aug 2015 14:59:41 +0000], User-Agent=[IBM FileNet P8 CE Java API (5.1.0 / dap501.000.004.020)], Content-Type=[application/soap+xml]}
+2015-08-31 10:59:41,661 DEBUG  [ServiceSessionNst] HTTP connect done
+2015-08-31 10:59:41,661 DEBUG  [ServiceSessionNst] HTTP getOutputStream done
+2015-08-31 10:59:41,661 DEBUG  [ClientOperation] Using Principal<FileNet-P8Admin> from UserContext
+2015-08-31 10:59:41,661 DEBUG  [ServiceSessionNst] SOAP /Envelope done
+2015-08-31 10:59:41,661 DEBUG  [ServiceSessionNst] HTTP outputStream closed
+2015-08-31 10:59:41,661 DEBUG  [ServiceSessionNst] Deserialize GetObjectsRequest/GetObjectsResponse using ServiceSessionNst@12d78bd
+2015-08-31 10:59:41,661 DEBUG  [ServiceSessionNst] HTTP getInputStream done
+2015-08-31 10:59:41,661 DEBUG  [ServiceSessionNst] HTTP response properties {null=[HTTP/1.1 200 OK], Content-Language=[en-US], Date=[Mon, 31 Aug 2015 14:59:41 GMT], Transfer-Encoding=[chunked], SOAPAction=[""], User-Agent=[IBM FileNet P8 CE Java API (5.1.0 / dap501.000.004.020)], Content-Type=[application/soap+xml], Server=[WebSphere Application Server/7.0]}
+2015-08-31 10:59:41,661 DEBUG  [TokenReaderNst] token=START_TOKEN name=Envelope depth=0
+2015-08-31 10:59:41,661 DEBUG  [TokenReaderNst] token=START_TOKEN name=Body depth=1
+2015-08-31 10:59:41,661 DEBUG  [TokenReaderNst] token=START_TOKEN name=GetObjectsResponse depth=2
+2015-08-31 10:59:41,661 DEBUG  [TokenReaderNst] token=START_TOKEN name=ObjectResponse depth=3
+2015-08-31 10:59:41,661 DEBUG  [TokenReaderNst] token=START_TOKEN name=Object depth=4
+2015-08-31 10:59:41,661 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,661 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,661 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,661 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,661 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,661 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,661 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=CONTENT depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=6
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=5
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=Object depth=4
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=ObjectResponse depth=3
+2015-08-31 10:59:41,677 DEBUG  [TokenReaderNst] token=END_TOKEN name=GetObjectsResponse depth=2
+2015-08-31 10:59:41,677 DEBUG  [Session] <getObjectsResponse elapsed="28" correlationId="1" rid="1">
+  <value type="Domain" updateSequenceNumber="11" accessAllowed="459267" rid="2">
+    <objectReference type="GlobalIdentity" classIdentity="Domain" identity="{9CD0E9A3-F6A1-4888-B5C9-E40F70DCEE86}" rid="3"/>
+    <properties type="Properties" rid="4">
+      <property type="PropertyEngineObject" name="ClassDescription" dirty="false" access="1" rid="5">
+        <value type="GlobalIdentity" classIdentity="ClassDescription" identity="{FCEEED8B-AE17-441C-AD04-56E560255331}" rid="6"/>
+      </property>
+      <property type="PropertyEngineObjectList" name="Permissions" dirty="false" access="7" rid="7">
+        <value type="UnevaluatedPropertyValue" propertyName="Permissions" rid="8">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectList" name="PermissionDescriptions" dirty="false" access="1" rid="9">
+        <value type="UnevaluatedPropertyValue" propertyName="PermissionDescriptions" rid="10">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="MarkingSets" dirty="false" access="1" rid="11">
+        <value type="UnevaluatedPropertyValue" propertyName="MarkingSets" rid="12">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="IsolatedRegions" dirty="false" access="1" rid="13">
+        <value type="UnevaluatedPropertyValue" propertyName="IsolatedRegions" rid="14">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObject" name="DefaultSite" dirty="false" access="7" rid="15">
+        <value type="GlobalIdentity" classIdentity="Site" identity="{07539A4C-DD66-492B-8A0B-BC2363C9BDB9}" rid="16"/>
+      </property>
+      <property type="PropertyString" name="Name" dirty="false" access="7" rid="17">
+        <value>JFS_DEV_CE</value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="Sites" dirty="false" access="1" rid="18">
+        <value type="UnevaluatedPropertyValue" propertyName="Sites" rid="19">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyString" name="EncryptionAlgorithm" dirty="false" access="1" rid="20">
+        <value>RSA/NONE/PKCS1PADDING</value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="DITARenditionEngineConnections" dirty="false" access="1" rid="21">
+        <value type="UnevaluatedPropertyValue" propertyName="DITARenditionEngineConnections" rid="22">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyBinary" name="PublicKey" dirty="false" access="1" rid="23">
+        <value length="162" truncated="true" rid="24">30 81 9f 30 0d 06 09 2a ...</value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="TextSearchServers" dirty="false" access="1" rid="25">
+        <value type="UnevaluatedPropertyValue" propertyName="TextSearchServers" rid="26">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyId" name="Id" dirty="false" access="1" rid="27">
+        <value type="Id">{9CD0E9A3-F6A1-4888-B5C9-E40F70DCEE86}</value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="RenditionEngineConnections" dirty="false" access="1" rid="28">
+        <value type="UnevaluatedPropertyValue" propertyName="RenditionEngineConnections" rid="29">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="ReplicationGroups" dirty="false" access="1" rid="30">
+        <value type="UnevaluatedPropertyValue" propertyName="ReplicationGroups" rid="31">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyString" name="ObjectStoreSchemaOracle" dirty="false" access="1" rid="32">
+        <value length="31985">-- Generated for Oracle databases on: Sun Aug 09 12:28:47 EDT 2015
+-- The following SchemaRevision comment must be present and m...</value>
+      </property>
+      <property type="PropertyString" name="ObjectStoreSchemaMSSQL" dirty="false" access="1" rid="33">
+        <value length="34163">-- Generated for SQL Server databases on: Sun Aug 09 12:28:47 EDT 2015
+-- The following SchemaRevision comment must be present a...</value>
+      </property>
+      <property type="PropertyEngineObject" name="VerityDomainConfiguration" dirty="false" access="1" rid="34">
+        <value null="true"/>
+      </property>
+      <property type="PropertyEngineObjectList" name="DirectoryConfigurations" dirty="false" access="7" rid="35">
+        <value type="UnevaluatedPropertyValue" propertyName="DirectoryConfigurations" rid="36">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="VerityDomainConfigurations" dirty="false" access="1" rid="37">
+        <value type="UnevaluatedPropertyValue" propertyName="VerityDomainConfigurations" rid="38">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectList" name="SubsystemConfigurations" dirty="false" access="7" rid="39">
+        <value type="UnevaluatedPropertyValue" propertyName="SubsystemConfigurations" rid="40">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="ObjectStores" dirty="false" access="1" rid="41">
+        <value type="UnevaluatedPropertyValue" propertyName="ObjectStores" rid="42">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyString" name="ObjectStoreSchemaDB2" dirty="false" access="1" rid="43">
+        <value length="37815">-- Generated for DB2 LUW databases on: Sun Aug 09 12:28:47 EDT 2015
+-- The following SchemaRevision comment must be present and ...</value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="AddOns" dirty="false" access="1" rid="44">
+        <value type="UnevaluatedPropertyValue" propertyName="AddOns" rid="45">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="ExternalRepositories" dirty="false" access="1" rid="46">
+        <value type="UnevaluatedPropertyValue" propertyName="ExternalRepositories" rid="47">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="PEConnectionPoints" dirty="false" access="1" rid="48">
+        <value type="UnevaluatedPropertyValue" propertyName="PEConnectionPoints" rid="49">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="FixedContentDevices" dirty="false" access="1" rid="50">
+        <value type="UnevaluatedPropertyValue" propertyName="FixedContentDevices" rid="51">
+          <parent ref="3"/>
+        </value>
+      </property>
+      <property type="PropertyEngineObjectSet" name="ContentCacheAreas" dirty="false" access="1" rid="52">
+        <value type="UnevaluatedPropertyValue" propertyName="ContentCacheAreas" rid="53">
+          <parent ref="3"/>
+        </value>
+      </property>
+    </properties>
+  </value>
+</getObjectsResponse>
+2015-08-31 10:59:41,693 DEBUG  [FileNetExtractor] Personal Id: LAST_NAME
+2015-08-31 10:59:41,693 DEBUG  [FileNetExtractor] Personal Id: FIRST_NAME
+2015-08-31 10:59:41,693 DEBUG  [FileNetExtractor] Personal Id: SSN
+2015-08-31 10:59:41,693 DEBUG  [FileNetExtractor] queryPersonalId: doc.[LAST_NAME],doc.[FIRST_NAME],doc.[SSN],
+2015-08-31 10:59:41,693 DEBUG  [FileNetExtractor] SELECT doc.[LAST_NAME],doc.[FIRST_NAME],doc.[SSN], doc.[DateCreated]  FROM [Document] doc WHERE doc.[Id] = {818A22CF-75BB-49E8-A2E1-2F35718F87D9}
+2015-08-31 10:59:41,693 DEBUG  [SessionLocator] No session entry found in the cache for http://ax-svc-03202.odjfs.state.oh.us:9080/wsi/fncews40mtom/
+2015-08-31 10:59:41,693 DEBUG  [SessionLocator] SessionLocator.createNewSoapSession called with providerURL http://ax-svc-03202.odjfs.state.oh.us:9080 path /wsi/FNCEWS40MTOM/
+2015-08-31 10:59:41,693 DEBUG  [SessionLocator] Instantiating a SoapSession instance using uri http://ax-svc-03202.odjfs.state.oh.us:9080/wsi/FNCEWS40MTOM/
+2015-08-31 10:59:41,693 DEBUG  [SessionLocator] Remote session is returned and will be wrapped in a session handle for retry conditions
+2015-08-31 10:59:41,708 DEBUG  [Session] <executeSearchRequest clientCaller="com.sun.org.apache.xalan.internal.xsltc.trax.TransformerImpl.transformIdentity(Unknown Source)" continueable="false" rid="1">
+  <search type="RepositorySearch" searchSQL="SELECT doc.[LAST_NAME],doc.[FIRST_NAME],doc.[SSN], doc.[DateCreated]  FROM [Document] doc WHERE doc.[Id] = {818A22CF-75BB-49E8-A2E1-2F35718F87D9}" rid="2">
+    <propertyFilter type="PropertyFilter" rid="3">
+      <includePropertyList size="4" rid="4">
+        <entry type="FilterElement" maxRecursion="1" value="DateCreated" rid="5"/>
+        <entry type="FilterElement" maxRecursion="1" value="LAST_NAME" rid="6"/>
+        <entry type="FilterElement" maxRecursion="1" value="FIRST_NAME" rid="7"/>
+        <entry type="FilterElement" maxRecursion="1" value="SSN" rid="8"/>
+      </includePropertyList>
+      <includeTypeList size="0" rid="9"/>
+      <excludePropertyList size="0" rid="10"/>
+    </propertyFilter>
+  </search>
+  <searchScope type="ObjectStoreScope" rid="11">
+    <objectStore type="GlobalIdentity" classIdentity="ObjectStore" identity="{FF86782B-63B4-4703-A3DF-C8E27F1BC5B4}" rid="12"/>
+  </searchScope>
+  <searchMode type="SearchMode" value="0" rid="13"/>
+</executeSearchRequest>
+2015-08-31 10:59:41,708 DEBUG  [ServiceSessionNst] Serialize ExecuteSearchRequest/ExecuteSearchResponse using ServiceSessionNst@57c332
+2015-08-31 10:59:41,708 DEBUG  [ServiceSessionNst] URL openConnection done
+2015-08-31 10:59:41,708 DEBUG  [AttachmentHelperNst] unique piece: 7edbdf4ce4df2e3a-14f84455a0c
+2015-08-31 10:59:41,708 DEBUG  [AttachmentHelperNst] Attachment 0 content ID: v0-7edbdf4ce4df2e3a-14f84455a0c@mtom.p8ce.filenet.com
+2015-08-31 10:59:41,708 DEBUG  [ServiceSessionNst] HTTP request properties {Date=[Mon, 31 Aug 2015 14:59:41 +0000], User-Agent=[IBM FileNet P8 CE Java API (5.1.0 / dap501.000.004.020)], Content-Type=[application/soap+xml]}
+2015-08-31 10:59:41,724 DEBUG  [ServiceSessionNst] HTTP connect done
+2015-08-31 10:59:41,724 DEBUG  [ServiceSessionNst] HTTP getOutputStream done
+2015-08-31 10:59:41,724 DEBUG  [ClientOperation] Using Principal<FileNet-P8Admin> from UserContext
+2015-08-31 10:59:41,724 DEBUG  [ServiceSessionNst] SOAP /Envelope done
+2015-08-31 10:59:41,724 DEBUG  [ServiceSessionNst] HTTP outputStream closed
+2015-08-31 10:59:41,724 DEBUG  [ServiceSessionNst] Deserialize ExecuteSearchRequest/ExecuteSearchResponse using ServiceSessionNst@57c332
+2015-08-31 10:59:41,739 DEBUG  [ServiceSessionNst] HTTP getInputStream done
+2015-08-31 10:59:41,739 DEBUG  [ServiceSessionNst] HTTP response properties {null=[HTTP/1.1 200 OK], Content-Language=[en-US], Date=[Mon, 31 Aug 2015 14:59:41 GMT], Transfer-Encoding=[chunked], SOAPAction=[""], User-Agent=[IBM FileNet P8 CE Java API (5.1.0 / dap501.000.004.020)], Content-Type=[multipart/related; boundary=A-B--MIME-BOUNDARY--d122134eedd284db-14f84455a36--Y-Z; type="application/xop+xml"; start-info="application/soap+xml"; start="<v0-d122134eedd284db-14f84455a36@mtom.p8ce.filenet.com>"], Server=[WebSphere Application Server/7.0]}
+2015-08-31 10:59:41,739 DEBUG  [MultipartInputStreamManager] MIME boundary: A-B--MIME-BOUNDARY--d122134eedd284db-14f84455a36--Y-Z
+2015-08-31 10:59:41,739 DEBUG  [MultipartInputStreamManager] Master buffer size: 16384
+2015-08-31 10:59:41,739 DEBUG  [MultipartInputStreamManager] instantiated reference to part <v0-d122134eedd284db-14f84455a36@mtom.p8ce.filenet.com>; 1508095
+2015-08-31 10:59:41,739 DEBUG  [MultipartInputStreamManager] instantiated reference to part <v0-d122134eedd284db-14f84455a36@mtom.p8ce.filenet.com>; 12963869
+2015-08-31 10:59:41,739 DEBUG  [MultipartInputStreamManager] found part in stream <v0-d122134eedd284db-14f84455a36@mtom.p8ce.filenet.com>; 12963869
+2015-08-31 10:59:41,739 DEBUG  [MultipartInputStreamManager] activating part <v0-d122134eedd284db-14f84455a36@mtom.p8ce.filenet.com>; 1508095
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=START_TOKEN name=Envelope depth=0
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=START_TOKEN name=Body depth=1
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=START_TOKEN name=ExecuteSearchResponse depth=2
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=START_TOKEN name=Object depth=3
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=4
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=5
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=CONTENT depth=5
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=5
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=4
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=4
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=5
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=CONTENT depth=5
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=5
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=4
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=4
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=5
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=CONTENT depth=5
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=5
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=4
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=START_TOKEN name=Property depth=4
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=START_TOKEN name=Value depth=5
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=CONTENT depth=5
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=END_TOKEN name=Value depth=5
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=END_TOKEN name=Property depth=4
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=END_TOKEN name=Object depth=3
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=START_TOKEN name=CollectionTerminator depth=3
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=END_TOKEN name=CollectionTerminator depth=3
+2015-08-31 10:59:41,739 DEBUG  [TokenReaderNst] token=END_TOKEN name=ExecuteSearchResponse depth=2
+2015-08-31 10:59:41,739 DEBUG  [Session] <executeSearchResponse elapsed="28" rid="1">
+  <value type="SubSet" stale="false" classType="com.filenet.api.core.EngineObject" rid="2">
+    <list size="1" rid="3">
+      <entry type="Document" superClasses="UCDocument JFSDocument Document" updateSequenceNumber="3" accessAllowed="998903" rid="4">
+        <objectReference type="RepositoryIdentity" classIdentity="UIDocument" id="{818A22CF-75BB-49E8-A2E1-2F35718F87D9}" rid="5">
+          <objectStore type="GlobalIdentity" classIdentity="ObjectStore" identity="{FF86782B-63B4-4703-A3DF-C8E27F1BC5B4}" rid="6"/>
+        </objectReference>
+        <properties type="Properties" rid="7">
+          <property type="PropertyString" name="SSN" dirty="false" access="7" rid="8">
+            <value>308764558</value>
+          </property>
+          <property type="PropertyString" name="LAST_NAME" dirty="false" access="7" rid="9">
+            <value>LEE</value>
+          </property>
+          <property type="PropertyString" name="FIRST_NAME" dirty="false" access="7" rid="10">
+            <value>DELPHINA</value>
+          </property>
+          <property type="PropertyDateTime" name="DateCreated" dirty="false" access="1" rid="11">
+            <value>2014-04-10T16:46:29.886Z</value>
+          </property>
+        </properties>
+      </entry>
+    </list>
+    <paging type="DefaultPaging" rid="12"/>
+  </value>
+</executeSearchResponse>
+2015-08-31 10:59:41,739 DEBUG  [FileNetExtractor] targetPersonalId: LEE DELPHINA 308764558 
+2015-08-31 10:59:41,739 INFO   [ExtractCPILogs] 1 logs are extracted.
+2015-08-31 10:59:41,755 DEBUG  [Object] FN_UIDMS,KWONS,"08/24/2015 15:27:34",LEE DELPHINA 308764558,"04/10/2014 12:46:29",{818A22CF-75BB-49E8-A2E1-2F35718F87D9}
+2015-08-31 10:59:41,755 INFO   [ExtractCPILogs] 1 logs are exported.
+2015-08-31 11:00:28,809 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2015-08-31 11:00:28,809 INFO   [ExtractCPILogs] Application Property File: FN_UIDMS.properties
+2015-08-31 11:00:28,871 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\KWONS\workspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2015-08-31 11:00:28,902 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2015-08-31 11:00:29,651 INFO   [ExtractCPILogs] 1 logs are extracted.
+2015-08-31 11:00:29,651 INFO   [ExtractCPILogs] 1 logs are exported.
+2015-08-31 11:01:23,085 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2015-08-31 11:01:23,085 INFO   [ExtractCPILogs] Application Property File: FN_UIDMS.properties
+2015-08-31 11:01:23,147 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\KWONS\workspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2015-08-31 11:01:23,178 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2015-08-31 11:01:38,593 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2015-08-31 11:01:38,609 INFO   [ExtractCPILogs] Application Property File: FN_UIDMS.properties
+2015-08-31 11:01:38,671 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\KWONS\workspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2015-08-31 11:01:38,702 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2015-08-31 11:01:49,111 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2015-08-31 11:01:49,111 INFO   [ExtractCPILogs] Application Property File: FN_UIDMS.properties
+2015-08-31 11:01:49,173 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\KWONS\workspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2015-08-31 11:01:49,204 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2015-08-31 11:01:49,984 INFO   [ExtractCPILogs] 1 logs are extracted.
+2015-08-31 11:01:49,984 INFO   [ExtractCPILogs] 1 logs are exported.
+2015-08-31 11:06:23,190 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2015-08-31 11:06:23,191 INFO   [ExtractCPILogs] Application Property File: FN_UIDMS.properties
+2015-08-31 11:06:23,263 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\KWONS\workspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2015-08-31 11:06:23,293 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2015-08-31 11:06:24,048 INFO   [ExtractCPILogs] 1 logs are extracted.
+2015-08-31 11:06:24,051 INFO   [ExtractCPILogs] 1 logs are exported.
