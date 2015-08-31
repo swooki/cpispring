@@ -147,7 +147,7 @@ public class FileNetExtractor extends Extractor implements Extractable {
 		String[] personalIds = appConfig.getProperty(AppConfig.PERSONAL_ID).split(",");
 		
 		for(String personalId: personalIds){
-			logger.debug("Personal Ids: " + personalId);
+			logger.debug("Personal Id: " + personalId);
 		}
 	
 		PropertyFilter filters = new PropertyFilter();
@@ -177,13 +177,12 @@ public class FileNetExtractor extends Extractor implements Extractable {
 			Iterator j = documentSet.iterator();
 			IndependentlyPersistableObject doc = (IndependentlyPersistableObject) j
 					.next();
-			String tmp = "";
-			
+			String targetPersonalId = "";
 			for(String personalId: personalIds){
-				tmp += (doc.getProperties().getStringValue(personalId).trim() + " ");
+				targetPersonalId += (doc.getProperties().getStringValue(personalId).trim() + " ");
 			}
-			logger.debug("tmp: " + tmp);
-			log.setPersonalId(tmp.trim());
+			logger.debug("targetPersonalId: " + targetPersonalId);
+			log.setPersonalId(targetPersonalId.trim());
 			log.setDateCreated(doc.getProperties().getDateTimeValue(
 					"DateCreated"));
 		}

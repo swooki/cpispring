@@ -47,11 +47,11 @@ public class CSVExporter extends Exporter implements Exportable {
 			writer.append(log.getDocumentAccessed() + '\n');
 			writer.flush();
 
-			logger.info(log.getApplication() + ',' + log.getUserAccessed()
+			logger.debug(log.getApplication() + ',' + log.getUserAccessed()
 					+ ',' + formatter.format(log.getDateAccessed()) + ','
 					+ log.getPersonalId().replace(',', '.') + ','
 					+ formatter.format(log.getDateCreated()) + ','
-					+ log.getDocumentAccessed() + '\n');
+					+ log.getDocumentAccessed());
 		}
 		writer.close();
 	}
