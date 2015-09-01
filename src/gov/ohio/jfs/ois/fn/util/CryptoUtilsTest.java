@@ -15,7 +15,7 @@ public class CryptoUtilsTest {
 	@Test
 	public void testEncrypt() throws GeneralSecurityException {
 		// Use the following code to generate an encrypted password.
-		String plainText = "filenet";
+		String plainText = "han*liqv";
 		System.out.println(plainText);
 		 		    
 		String encryptedPassword = CryptoUtils.encrypt(plainText);

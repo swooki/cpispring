@@ -4,6 +4,7 @@ public class ExporterFactory {
 
 	public static final String EXPORTER_TYPE_CSV = "CSV";
 	public static final String EXPORTER_TYPE_XML = "XML";
+	public static final String EXPORTER_TYPE_DB = "DB";
 	public static final String EXPORTER_TYPE_CONSOLE = "CONSOLE";
 
 	public static Exportable getExtractor(AppConfig app) {
@@ -18,6 +19,9 @@ public class ExporterFactory {
 		}
 		if (exporterType.equals(EXPORTER_TYPE_CONSOLE)) {
 			exporter = new ConsoleExtporter(app);
+		}
+		if (exporterType.equals(EXPORTER_TYPE_DB)) {
+			exporter = new DBExtporter(app);
 		}
 		return exporter;
 	}

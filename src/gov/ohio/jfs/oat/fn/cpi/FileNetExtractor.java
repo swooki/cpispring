@@ -76,6 +76,7 @@ public class FileNetExtractor extends Extractor implements Extractable {
 
 		// Extract events that have been created on the given date.
 		// Needs to extract only "Get Content"
+		// TODO: Additional event types can be added. 
 		SearchSQL eventSql = new SearchSQL();
 		eventSql.setMaxRecords(this.maxEventNum);
 		eventSql.setQueryString("SELECT ev.[DateCreated], ev.[Creator], ev.[SourceObjectId]"
