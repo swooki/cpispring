@@ -14,7 +14,6 @@ public abstract class Extractor implements Extractable {
 		this.application = application;
 	}
 
-	@Override
 	abstract public ArrayList<CPILog> extract() throws Exception;
 
 }

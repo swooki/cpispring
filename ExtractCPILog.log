@@ -1115,3 +1115,12 @@ FileNetP8Engine {
 2015-09-08 08:04:37,926 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
 2015-09-08 08:04:42,391 INFO   [ExtractCPILogs] 146 logs are extracted.
 2015-09-08 08:04:42,409 INFO   [ExtractCPILogs] 146 logs are exported.
+2015-09-10 15:47:12,858 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2015-09-10 15:47:12,859 INFO   [ExtractCPILogs] Application Property File: FN_UIDMS.properties
+2015-09-10 15:47:13,064 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\KWONS\workspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2015-09-10 15:47:13,097 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2015-09-10 15:49:13,556 INFO   [ExtractCPILogs] 4663 logs are extracted.
+2015-09-10 15:49:14,579 INFO   [ExtractCPILogs] 4663 logs are exported.

@@ -20,7 +20,6 @@ public class TestExtractor implements Extractable {
 
 	}
 
-	@Override
 	public ArrayList<CPILog> extract() throws Exception {
 		ArrayList<CPILog> logs = new ArrayList<CPILog>();
 

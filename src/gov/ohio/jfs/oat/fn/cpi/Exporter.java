@@ -19,6 +19,5 @@ public abstract class Exporter implements Exportable {
 		this.appConfig = app;
 	}
 	
-	@Override
 	abstract public void export(ArrayList<CPILog> logs) throws Exception;
 }
