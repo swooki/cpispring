@@ -129,7 +129,6 @@ public class FileNetExtractor extends Extractor implements Extractable {
 						ev.delete();
 						batch.add(ev, null);
 					}
-
 				} catch (Exception e) {
 					throw e;
 				}

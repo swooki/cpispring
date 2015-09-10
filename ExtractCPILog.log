@@ -1036,3 +1036,82 @@ FileNetP8Engine {
     java.home = C:\Program Files (x86)\Java\jre7
 2015-09-01 09:16:10,473 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
 2015-09-01 09:16:11,140 INFO   [ExtractCPILogs] 0 logs are extracted.
+2015-09-01 15:01:48,561 INFO   [ExtractCPILogs] Application Name: FN_OFCBC
+2015-09-01 15:01:48,562 INFO   [ExtractCPILogs] Application Property File: FN_OFCBC.properties
+2015-09-01 15:01:48,630 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\KWONS\workspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2015-09-01 15:01:48,661 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2015-09-01 15:01:49,368 INFO   [ExtractCPILogs] 0 logs are extracted.
+2015-09-02 15:38:46,603 INFO   [ExtractCPILogs] Application Name: FN_OFCBC
+2015-09-02 15:38:46,611 INFO   [ExtractCPILogs] Application Property File: FN_OFCBC.properties
+2015-09-02 15:38:46,924 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\KWONS\workspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2015-09-02 15:38:46,953 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2015-09-02 15:38:48,572 INFO   [ExtractCPILogs] 0 logs are extracted.
+2015-09-02 15:39:48,616 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2015-09-02 15:39:48,617 INFO   [ExtractCPILogs] Application Property File: FN_UIDMS.properties
+2015-09-02 15:39:48,685 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\KWONS\workspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2015-09-02 15:39:48,714 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2015-09-02 15:42:01,774 INFO   [ExtractCPILogs] 5413 logs are extracted.
+2015-09-02 15:42:01,954 INFO   [ExtractCPILogs] 5413 logs are exported.
+2015-09-02 15:43:53,064 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2015-09-02 15:43:53,064 INFO   [ExtractCPILogs] Application Property File: FN_UIDMS.properties
+2015-09-02 15:43:53,135 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\KWONS\workspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2015-09-02 15:43:53,165 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2015-09-02 15:46:20,084 INFO   [ExtractCPILogs] 5455 logs are extracted.
+2015-09-02 15:46:20,207 INFO   [ExtractCPILogs] 5455 logs are exported.
+2015-09-03 08:54:05,341 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2015-09-03 08:54:05,361 INFO   [ExtractCPILogs] Application Property File: FN_UIDMS.properties
+2015-09-03 08:54:05,468 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\KWONS\workspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2015-09-03 08:54:05,497 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2015-09-03 08:54:26,415 INFO   [ExtractCPILogs] 797 logs are extracted.
+2015-09-03 08:54:26,481 INFO   [ExtractCPILogs] 797 logs are exported.
+2015-09-03 15:43:52,901 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2015-09-03 15:43:52,902 INFO   [ExtractCPILogs] Application Property File: FN_UIDMS.properties
+2015-09-03 15:43:52,974 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\KWONS\workspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2015-09-03 15:43:53,003 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2015-09-03 15:45:49,248 INFO   [ExtractCPILogs] 4584 logs are extracted.
+2015-09-03 15:45:50,038 INFO   [ExtractCPILogs] 4584 logs are exported.
+2015-09-04 07:16:46,691 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2015-09-04 07:16:46,695 INFO   [ExtractCPILogs] Application Property File: FN_UIDMS.properties
+2015-09-04 07:16:46,788 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\KWONS\workspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2015-09-04 07:16:46,816 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2015-09-04 07:16:48,830 INFO   [ExtractCPILogs] 18 logs are extracted.
+2015-09-04 07:16:48,849 INFO   [ExtractCPILogs] 18 logs are exported.
+2015-09-08 07:29:30,425 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2015-09-08 07:29:30,503 INFO   [ExtractCPILogs] Application Property File: FN_UIDMS.properties
+2015-09-08 07:29:30,947 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\KWONS\workspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2015-09-08 07:29:31,003 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2015-09-08 07:29:34,505 INFO   [ExtractCPILogs] 36 logs are extracted.
+2015-09-08 07:29:34,638 INFO   [ExtractCPILogs] 36 logs are exported.
+2015-09-08 08:04:37,824 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2015-09-08 08:04:37,825 INFO   [ExtractCPILogs] Application Property File: FN_UIDMS.properties
+2015-09-08 08:04:37,897 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\KWONS\workspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2015-09-08 08:04:37,926 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2015-09-08 08:04:42,391 INFO   [ExtractCPILogs] 146 logs are extracted.
+2015-09-08 08:04:42,409 INFO   [ExtractCPILogs] 146 logs are exported.
