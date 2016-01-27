@@ -1133,3 +1133,30 @@ FileNetP8Engine {
 2015-09-11 15:40:21,807 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
 2015-09-11 15:42:34,709 INFO   [ExtractCPILogs] 4334 logs are extracted.
 2015-09-11 15:42:35,626 INFO   [ExtractCPILogs] 4334 logs are exported.
+2016-01-27 08:17:32,754 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2016-01-27 08:17:32,757 INFO   [ExtractCPILogs] Application Property File: FN_UIDMS.properties
+2016-01-27 08:17:33,420 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\COTSWorkspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2016-01-27 08:17:33,525 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2016-01-27 08:17:47,000 INFO   [ExtractCPILogs] 433 logs are extracted.
+2016-01-27 08:17:47,013 INFO   [ExtractCPILogs] 433 logs are exported.
+2016-01-27 08:20:08,909 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2016-01-27 08:20:08,909 INFO   [ExtractCPILogs] Application Property File: FN_UIDMS.properties
+2016-01-27 08:20:08,990 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\COTSWorkspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2016-01-27 08:20:09,018 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2016-01-27 08:20:25,240 INFO   [ExtractCPILogs] 5 logs are extracted.
+2016-01-27 08:20:25,244 INFO   [ExtractCPILogs] 5 logs are exported.
+2016-01-27 08:20:41,472 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2016-01-27 08:20:41,473 INFO   [ExtractCPILogs] Application Property File: FN_UIDMS.properties
+2016-01-27 08:20:41,538 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\COTSWorkspace\ExtractCPILog
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2016-01-27 08:20:41,566 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2016-01-27 08:20:42,325 INFO   [ExtractCPILogs] 5 logs are extracted.
+2016-01-27 08:20:42,331 INFO   [ExtractCPILogs] 5 logs are exported.
