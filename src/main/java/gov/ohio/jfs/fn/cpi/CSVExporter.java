@@ -1,12 +1,9 @@
 package gov.ohio.jfs.fn.cpi;
 
-import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Properties;
-
 import org.apache.log4j.Logger;
 
 public class CSVExporter extends Exporter implements Exportable {
@@ -35,9 +32,9 @@ public class CSVExporter extends Exporter implements Exportable {
 	@Override
 	public void export(ArrayList<CPILog> logs){
 		logger.info("CSV Exporter is selected.");
-		SimpleDateFormat formatter = new SimpleDateFormat(this.getDateFormat());
+		SimpleDateFormat formatter = new SimpleDateFormat(this.dateFormat);
 
-		logger.info("Date Format:" + this.getDateFormat());
+		logger.info("Date Format:" + this.dateFormat);
 		logger.info("Is Append:" + this.isAppend());
 
 		// Open output file

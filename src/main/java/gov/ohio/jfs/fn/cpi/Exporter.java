@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public abstract class Exporter implements Exportable {
 
 	public static final String DEFAULT_DATE_FORMAT =  "MM/dd/yyyy HH:mm:ss";
-	private String dateFormat;
+	String dateFormat;
 
 	public void setDateFormat(String dateFormat) {
 		this.dateFormat = dateFormat;

@@ -25,7 +25,7 @@ public class TestExtractor implements Extractable {
 		return this.maxLogNum;
 	}
 
-	public ArrayList<CPILog> extract() throws Exception {
+	public ArrayList<CPILog> extract(){
 		ArrayList<CPILog> logs = new ArrayList<CPILog>();
 
 		for (int i = 0; i < maxLogNum; i++) {

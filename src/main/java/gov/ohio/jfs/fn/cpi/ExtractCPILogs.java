@@ -1,10 +1,7 @@
 package gov.ohio.jfs.fn.cpi;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Properties;
-
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 
@@ -14,6 +11,8 @@ import gov.ohio.jfs.fn.cpi.exception.NoApplicationNameException;
 public class ExtractCPILogs {
 
 	private AppConfig appConfig;
+	private Extractable extractor;
+	private Exportable exporter;
 	private static Logger logger = Logger.getLogger(ExtractCPILogs.class);
 
 	// expecting 3 parameters; application name;
@@ -23,6 +22,16 @@ public class ExtractCPILogs {
 
 	public AppConfig getAppConfig() {
 		return this.appConfig;
+	}
+
+	public void setExporter(Exportable exporter) {
+		this.exporter= exporter;
+		
+	}
+
+	public void setExtractor(Extractable extractor) {
+		this.extractor = extractor;
+
 	}
 
 	public static void main(String[] args) {
@@ -50,19 +59,24 @@ public class ExtractCPILogs {
 		logger.info("Application Property File: " + propertyFileName);
 
 		ExtractCPILogs ecl = new ExtractCPILogs(config);
-
 		Extractable extractor = ExtractorFactory.getExtractor(config);
-		ArrayList<CPILog> logList = extractor.extract();
+		ecl.setExtractor(extractor);
+		
+		Exportable exporter = ExporterFactory.getExporter(config);
+		ecl.setExporter(exporter);
+		
+		ecl.processLog();
+		}
+
+
+	public void processLog() {
+		ArrayList<CPILog> logList = this.extractor.extract();
 		logger.info(logList.size() + " logs are extracted.");
 
 		if (logList.size() > 0) {
-			Exportable exporter = ExporterFactory.getExporter(config);
 			exporter.export(logList);
 			logger.info(logList.size() + " logs are exported.");
 		}
-	}
-
-	public void processLog() {
 	}
 
 	void showLogs(ArrayList<CPILog> logs) {
@@ -71,8 +85,4 @@ public class ExtractCPILogs {
 		}
 	}
 
-	public void setExtractor(Extractable extractor) {
-		// TODO Auto-generated method stub
-
-	}
 }
