@@ -15,7 +15,7 @@
 			<param name="ConversionPattern" value="%d %-5p  [%c{1}] %m%n" />
 		</layout>
 	</appender>
-	<root additivity="true">
+	<root>
 		<priority value="INFO" />
 		<appender-ref ref="consoleAppender" />
 		<appender-ref ref="fileAppender" />
