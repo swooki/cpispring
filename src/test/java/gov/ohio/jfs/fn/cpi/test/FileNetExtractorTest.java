@@ -20,8 +20,8 @@ public class FileNetExtractorTest {
 	@Test
 	public void testFileNetExtractorParameters() {
 		FileNetExtractor extractor = new FileNetExtractor();
-		extractor.setActions("actions");
-		assertEquals(extractor.getActions(), "actions");
+		extractor.setAction("action");
+		assertEquals(extractor.getAction(), "action");
 		
 		extractor.setApplicationName("application name");
 		assertEquals(extractor.getApplicationName(),"application name");
@@ -55,7 +55,7 @@ public class FileNetExtractorTest {
 	}
 
 	private void initializeFileNetExtractor(FileNetExtractor extractor){
-		extractor.setActions("actions");
+		extractor.setAction("action");
 		extractor.setApplicationName("FN_UIDMS");
 		extractor.setCEURI("http://ax-svc-03202.odjfs.state.oh.us:9080/wsi/FNCEWS40MTOM/");
 		extractor.setDeleteAfterLog(true);
@@ -71,7 +71,6 @@ public class FileNetExtractorTest {
 	public void testValidateFileNetExtractor() {
 		FileNetExtractor extractor = new FileNetExtractor();
 		initializeFileNetExtractor(extractor);
-		assertTrue(extractor.validateParameters());
 	}
 
 	
@@ -80,7 +79,6 @@ public class FileNetExtractorTest {
 		FileNetExtractor extractor = new FileNetExtractor();
 
 		CryptoUtils cryptor = new CryptoUtils();
-		extractor.setCryptor(cryptor);
 		
 		extractor.setMax(100);
 		

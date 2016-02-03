@@ -9,7 +9,6 @@ import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import gov.ohio.jfs.fn.util.CryptoUtils;
-import gov.ohio.jfs.fn.util.Cryptor;
 
 public class CryptoUtilsTest {
 	private static Logger logger = Logger.getLogger(CryptoUtilsTest.class);
@@ -18,18 +17,16 @@ public class CryptoUtilsTest {
 	public void testEncrypt() throws GeneralSecurityException {
 		// Use the following code to generate an encrypted password.
 		String plainText = "helloworld";
-		Cryptor cryptor = new CryptoUtils();
 		
-		String encryptedPassword = cryptor.encrypt(plainText);
+		String encryptedPassword = CryptoUtils.encrypt(plainText);
 		assertNotEquals(plainText, encryptedPassword);
 	}
 	@Test
 	public void testDecrypt() throws GeneralSecurityException {
 		String plainText = "helloworld";
-		Cryptor cryptor = new CryptoUtils();
 
-		String encryptedPassword = cryptor.encrypt(plainText);
-		assertEquals(plainText,cryptor.decrypt(encryptedPassword));
+		String encryptedPassword = CryptoUtils.encrypt(plainText);
+		assertEquals(plainText, CryptoUtils.decrypt(encryptedPassword));
 	}
 
 }

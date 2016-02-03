@@ -12,7 +12,7 @@ public class AppConfig {
 	private Properties properties;
 
 	// Generic fields in <Application>.properties file
-	public static final String ACTIONS = "ACTION";
+	public static final String ACTION = "ACTION";
 	public static final String APPLICATION_NAME = "APPLICATION_NAME";
 	public static final String EXTRACTOR_TYPE = "EXTRACTOR_TYPE";
 	public static final String EXPORTER_TYPE = "EXPORTER_TYPE";
@@ -42,10 +42,11 @@ public class AppConfig {
 	private AppConfig() {
 	}
 	
-	public AppConfig(String applicationName) throws FileNotFoundException, IOException {
+	public AppConfig(String applicationName)  throws IOException {
 		this.applicationName = applicationName;
 		this.properties = new Properties();
-		properties.load(new FileInputStream(this.applicationName + ".properties"));
+		String propertyFileName = this.applicationName + ".properties";
+		loadProperties(propertyFileName);
 	}
 	
 	public String getApplicationName() {
@@ -54,5 +55,10 @@ public class AppConfig {
 
 	public String getProperty(String propertyName) {
 		return properties.getProperty(propertyName);
+	}
+	
+	private void loadProperties(String propertyFileName)  throws IOException {
+		this.properties.load(new FileInputStream(propertyFileName));
+		
 	}
 }

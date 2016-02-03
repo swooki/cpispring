@@ -24,34 +24,29 @@ import com.filenet.api.query.SearchScope;
 import com.filenet.api.util.UserContext;
 
 import gov.ohio.jfs.fn.util.CryptoUtils;
-import gov.ohio.jfs.fn.util.Cryptor;
 
 public class FileNetExtractor extends Extractor implements Extractable {
 
 	private static Logger logger = Logger.getLogger(FileNetExtractor.class);
-	private Cryptor passwordCryptor;
 	private Connection conn;
 
-	private String actions;
+	private String action;
 	private String applicationName;
 	private String CEURI;
 	private String username;
-	private String password;
+	private String encryptedPassword;
 	private String stanzaName;
 	private String objectStoreName;
 	private String sourceClassName;
 	private boolean deleteAfterLog;
 	private String personalIds;
 
-	public void setCryptor(Cryptor cryptor) {
-		this.passwordCryptor = cryptor;
+	public void setAction(String action) {
+		this.action = action;
 	}
-	
-	public void setActions(String actions) {
-		this.actions = actions;
-	}
-	public String getActions() {
-		return this.actions;
+
+	public String getAction() {
+		return this.action;
 	}
 
 	public void setApplicationName(String applicationName) {
@@ -60,7 +55,6 @@ public class FileNetExtractor extends Extractor implements Extractable {
 
 	public void setCEURI(String CEURI) {
 		this.CEURI = CEURI;
-		conn = Factory.Connection.getConnection(this.CEURI);
 	}
 
 	public void setUsername(String username) {
@@ -68,7 +62,7 @@ public class FileNetExtractor extends Extractor implements Extractable {
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+		this.encryptedPassword = password;
 	}
 
 	public void setStanzaName(String stanzaName) {
@@ -91,37 +85,46 @@ public class FileNetExtractor extends Extractor implements Extractable {
 		this.personalIds = personalIds;
 	}
 
-
 	public FileNetExtractor() {
 		super();
 	}
 
 	@Override
 	public ArrayList<CPILog> extract() {
-
 		ArrayList<CPILog> logs = new ArrayList<CPILog>();
 
-		if(!validateParameters()) {
-			return logs;
+		if (!validateParameters()) {
+			logger.error("Validateion of parameters failed" + this.toString());
 		}
 
-		String decodedPassword="";
+		this.conn = Factory.Connection.getConnection(this.CEURI);
+		logger.debug("Connection to filenet has been established.");
+
+		UserContext uc = UserContext.get();
 		try {
-			decodedPassword = passwordCryptor.decrypt(this.password);
+			uc.pushSubject(UserContext.createSubject(this.conn, this.username,
+					CryptoUtils.decrypt(this.encryptedPassword), this.stanzaName));
 		} catch (GeneralSecurityException e) {
-			logger.error(e);
+			logger.error(e.getMessage());
 		}
-		
-		Subject subject = UserContext.createSubject(this.conn, this.username, decodedPassword, this.stanzaName);
-		UserContext.get().pushSubject(subject);
 
-		Domain dom = Factory.Domain.getInstance(conn, null);
-		ObjectStore os = Factory.ObjectStore.getInstance(dom, this.objectStoreName);
-		os.refresh();
+		try {
+			Domain dom = Factory.Domain.getInstance(conn, null);
+			ObjectStore os = Factory.ObjectStore.getInstance(dom, this.objectStoreName);
+			os.refresh();
+			
+			logs = fetchLogs(dom, os);
 
-		// Extract events that have been created on the given date.
-		// Needs to extract only "Get Content"
-		// TODO: Additional event types can be added.
+		} finally {
+			uc.popSubject();
+		}
+
+		return logs;
+	}
+
+	private ArrayList<CPILog> fetchLogs(Domain dom, ObjectStore os) {
+		ArrayList<CPILog> logs = new ArrayList<CPILog>();
+
 		SearchSQL eventSql = new SearchSQL();
 		eventSql.setMaxRecords(this.maxRecords);
 		eventSql.setQueryString("SELECT ev.[DateCreated], ev.[Creator], ev.[SourceObjectId]"
@@ -150,6 +153,7 @@ public class FileNetExtractor extends Extractor implements Extractable {
 				Event ev = (Event) obj;
 
 				// Get the values for event class
+				log.setAction(this.action);
 				log.setApplication(this.applicationName);
 				log.setDateAccessed(ev.getProperties().getDateTimeValue("DateCreated"));
 				log.setUserAccessed(ev.getProperties().getStringValue("Creator"));
@@ -200,31 +204,39 @@ public class FileNetExtractor extends Extractor implements Extractable {
 		IndependentObjectSet documentSet = documentScope.fetchObjects(documentSql, null, filters, false);
 
 		if (!documentSet.isEmpty()) {
-
 			Iterator j = documentSet.iterator();
 			IndependentlyPersistableObject doc = (IndependentlyPersistableObject) j.next();
 			String targetPersonalId = "";
 			for (String personalId : personalIds) {
-				targetPersonalId += (doc.getProperties().getStringValue(personalId).trim() + " ");
+				String stringValue = doc.getProperties().getStringValue(personalId);
+				if(stringValue != null) {
+					targetPersonalId += (stringValue.trim() + " ");
+				}
 			}
 			logger.debug("targetPersonalId: " + targetPersonalId);
 			log.setPersonalId(targetPersonalId.trim());
 		}
+		
 	}
+
 	public String getApplicationName() {
 		return this.applicationName;
 	}
+
 	public String getCEURI() {
 		return this.CEURI;
 	}
+
 	public boolean getDeleteAfterLog() {
 		return this.deleteAfterLog;
 	}
+
 	public String getObjectStoreName() {
 		return this.objectStoreName;
 	}
+
 	public String getPassword() {
-		return this.password;
+		return this.encryptedPassword;
 	}
 
 	public String getPersonalIds() {
@@ -243,11 +255,18 @@ public class FileNetExtractor extends Extractor implements Extractable {
 		return this.username;
 	}
 
-	public boolean validateParameters() {
-		
-		return (actions != null && applicationName != null && CEURI != null && username != null
-				&& password != null && objectStoreName != null && sourceClassName != null 
-				&& personalIds != null && this.maxRecords >= 0) ;
+	private boolean validateParameters() {
+
+		return (action != null && applicationName != null && CEURI != null && username != null
+				&& encryptedPassword != null && objectStoreName != null && sourceClassName != null
+				&& personalIds != null && this.maxRecords >= 0);
+	}
+
+	public String toString() {
+		return (super.toString() + "action:" + this.action + ", applicationName:" + this.applicationName + ", CEURI:"
+				+ this.CEURI + ", username:" + this.username + ", password:" + this.encryptedPassword
+				+ ", objectStoreName:" + this.objectStoreName + ", sourceClassName:" + this.sourceClassName
+				+ ", personalIds:" + this.personalIds + ", maxRecords:" + this.maxRecords);
 	}
 
 }

@@ -15,17 +15,14 @@ public class ExtractorFactory {
 
 		if(extractorType.equals(EXTRACTOR_TYPE_FILENET)) {
 			FileNetExtractor fileNetExtractor = new FileNetExtractor();
-			fileNetExtractor.setCryptor(new CryptoUtils());
-			fileNetExtractor.setActions(appConfig.getProperty(AppConfig.ACTIONS));
+			fileNetExtractor.setAction(appConfig.getProperty(AppConfig.ACTION));
 			fileNetExtractor.setApplicationName(appConfig.getProperty(AppConfig.APPLICATION_NAME));
 			fileNetExtractor.setCEURI(appConfig.getProperty(AppConfig.CE_URI));
 			fileNetExtractor.setDeleteAfterLog(
 					appConfig.getProperty(AppConfig.DELETE_AFTER_LOG).toUpperCase().equals(AppConfig.DELETE_AFTER_LOG_YES));
 			fileNetExtractor.setMax(Integer.parseInt(appConfig.getProperty(AppConfig.MAX_NUM_EVENTS)));
 			fileNetExtractor.setObjectStoreName(appConfig.getProperty(AppConfig.OBJECT_STORE_NAME));
-
-			String password = appConfig.getProperty(AppConfig.PASSWORD);
-			
+			fileNetExtractor.setPassword(appConfig.getProperty(AppConfig.PASSWORD));
 			fileNetExtractor.setPersonalIds(appConfig.getProperty(AppConfig.PERSONAL_IDS));
 			fileNetExtractor.setSourceClassName(appConfig.getProperty(AppConfig.SOURCE_CLASS_NAME));
 			fileNetExtractor.setStanzaName(appConfig.getProperty(AppConfig.JAAS_STANZA_NAME));

@@ -7,8 +7,8 @@ import java.security.NoSuchAlgorithmException;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
-public class CryptoUtils implements Cryptor {
-
+public class CryptoUtils{
+	
 	public static final String AES = "AES";
 
 	/**
@@ -18,7 +18,7 @@ public class CryptoUtils implements Cryptor {
 	 * @throws GeneralSecurityException
 	 * @throws IOException
 	 */
-	public String encrypt(String value) throws GeneralSecurityException {
+	public static String encrypt(String value) throws GeneralSecurityException {
 		SecretKeySpec sks = getSecretKeySpec();
 		Cipher cipher = Cipher.getInstance(CryptoUtils.AES);
 		cipher.init(Cipher.ENCRYPT_MODE, sks, cipher.getParameters());
@@ -32,7 +32,7 @@ public class CryptoUtils implements Cryptor {
 	 * @throws GeneralSecurityException
 	 * @throws IOException
 	 */
-	public String decrypt(String message)
+	public static String decrypt(String message)
 			throws GeneralSecurityException {
 		SecretKeySpec sks = getSecretKeySpec();
 		Cipher cipher = Cipher.getInstance(CryptoUtils.AES);
@@ -72,5 +72,13 @@ public class CryptoUtils implements Cryptor {
 			b[i] = (byte) v;
 		}
 		return b;
+	}
+	
+	public static void main(String[] args){
+		try {
+			System.out.println(CryptoUtils.decrypt(args[0]));
+		} catch (GeneralSecurityException e) {
+			e.printStackTrace();
+		}
 	}
 }
