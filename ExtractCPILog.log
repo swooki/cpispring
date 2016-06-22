@@ -6782,3 +6782,33 @@ FileNetP8Engine {
 2016-06-21 13:28:31,080 INFO   [CSVExporter] Date Format:"MM/dd/yyyy HH:mm:ss"
 2016-06-21 13:28:31,080 INFO   [CSVExporter] Is Append:true
 2016-06-21 13:28:31,082 INFO   [ExtractCPILogs] 4 logs are exported.
+2016-06-22 08:53:59,499 INFO   [ExtractCPILogs] Application Name: FN_CCMEP
+2016-06-22 08:54:03,594 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\TheKwonsWorkSpace\cpispring
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files\Java\jdk1.6.0_45\jre
+2016-06-22 08:54:03,690 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2016-06-22 09:02:34,068 INFO   [ExtractCPILogs] Application Name: FN_CCMEP
+2016-06-22 09:02:38,081 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\TheKwonsWorkSpace\cpispring
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files\Java\jdk1.6.0_45\jre
+2016-06-22 09:02:38,209 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2016-06-22 09:53:18,292 INFO   [ExtractCPILogs] Application Name: FN_CCMEP
+2016-06-22 09:53:18,414 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\TheKwonsWorkSpace\cpispring
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files\Java\jdk1.6.0_45\jre
+2016-06-22 09:53:18,453 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2016-06-22 09:56:33,020 INFO   [ExtractCPILogs] Application Name: FN_CCMEP
+2016-06-22 09:56:33,099 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\TheKwonsWorkSpace\cpispring
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files\Java\jdk1.6.0_45\jre
+2016-06-22 09:56:33,135 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2016-06-22 09:56:33,135 INFO   [FileNetExtractor] Connection to filenet has been established.
+2016-06-22 09:56:34,599 INFO   [ExtractCPILogs] 4 logs are extracted.
+2016-06-22 09:56:34,599 INFO   [CSVExporter] CSV Exporter is selected.
+2016-06-22 09:56:34,600 INFO   [CSVExporter] Date Format:"MM/dd/yyyy HH:mm:ss"
+2016-06-22 09:56:34,600 INFO   [CSVExporter] Is Append:true
+2016-06-22 09:56:34,602 INFO   [ExtractCPILogs] 4 logs are exported.

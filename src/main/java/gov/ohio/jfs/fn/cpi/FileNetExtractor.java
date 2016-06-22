@@ -39,6 +39,23 @@ public class FileNetExtractor extends Extractor implements Extractable {
 	private boolean deleteAfterLog;
 	private String personalIds;
 
+	private FileNetExtractor() {
+		super();
+	}
+	
+	public FileNetExtractor(String CEURI, String username, String encryptedPassword, String stanzaName, String objectStoreName) {
+		super();
+		this.CEURI = CEURI;
+		this.username = username;
+		this.encryptedPassword = encryptedPassword;
+		this.stanzaName = stanzaName;
+		this.objectStoreName = objectStoreName;
+		
+		this.conn = Factory.Connection.getConnection(this.CEURI);
+		logger.info("Connection to filenet has been established.");
+		
+	}
+	
 	public void setAction(String action) {
 		this.action = action;
 	}
@@ -49,26 +66,6 @@ public class FileNetExtractor extends Extractor implements Extractable {
 
 	public void setApplicationName(String applicationName) {
 		this.applicationName = applicationName;
-	}
-
-	public void setCEURI(String CEURI) {
-		this.CEURI = CEURI;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public void setPassword(String password) {
-		this.encryptedPassword = password;
-	}
-
-	public void setStanzaName(String stanzaName) {
-		this.stanzaName = stanzaName;
-	}
-
-	public void setObjectStoreName(String objectStoreName) {
-		this.objectStoreName = objectStoreName;
 	}
 
 	public void setSourceClassName(String sourceClassName) {
@@ -83,10 +80,6 @@ public class FileNetExtractor extends Extractor implements Extractable {
 		this.personalIds = personalIds;
 	}
 
-	public FileNetExtractor() {
-		super();
-	}
-
 	@Override
 	public ArrayList<CPILog> extract() {
 		ArrayList<CPILog> logs = new ArrayList<CPILog>();
@@ -95,8 +88,8 @@ public class FileNetExtractor extends Extractor implements Extractable {
 			logger.error("Validateion of parameters failed" + this.toString());
 		}
 
-		this.conn = Factory.Connection.getConnection(this.CEURI);
-		logger.debug("Connection to filenet has been established.");
+		// this.conn = Factory.Connection.getConnection(this.CEURI);
+		// logger.debug("Connection to filenet has been established.");
 
 		UserContext uc = UserContext.get();
 		try {

@@ -48,7 +48,7 @@ public class AppConfig {
 	}
 
 	public String getApplicationName() {
-		return applicationName;
+		return this.applicationName;
 	}
 
 	public String getProperty(String propertyName) {

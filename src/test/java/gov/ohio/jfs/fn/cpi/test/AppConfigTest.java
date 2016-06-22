@@ -19,6 +19,6 @@ public class AppConfigTest {
 	@Test 
 	public void testGetProperty()  throws IOException{
 		AppConfig appConfig = new AppConfig("FN_UIDMS");
-		assertEquals(appConfig.getProperty(appConfig.getApplicationName()), "FN_UIDMS");
+		assertEquals(appConfig.getProperty(appConfig.APPLICATION_NAME), "FN_UIDMS");
 	}
 }
