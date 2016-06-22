@@ -25,8 +25,8 @@ public class ExtractCPILogs {
 	}
 
 	public void setExporter(Exportable exporter) {
-		this.exporter= exporter;
-		
+		this.exporter = exporter;
+
 	}
 
 	public void setExtractor(Extractable extractor) {
@@ -40,34 +40,25 @@ public class ExtractCPILogs {
 
 		// The name of application should be passed via argument
 		if (args.length != 1) {
-			logger.error("Usage: ExtractAuditLog.java <APPLICATION_NAME>");
-			throw new NoApplicationNameException("\n\nUsage: ExtractAuditLog.java <APPLICATION_NAME>\n");
+			logger.error("Usage: " + ExtractCPILogs.class.getSimpleName() + " <APPLICATION_NAME>");
+			throw new NoApplicationNameException(
+					"\n\nUsage: " + ExtractCPILogs.class.getSimpleName() + ".java <APPLICATION_NAME>\n");
 		}
 		logger.info("Application Name: " + args[0]);
-
-		// The name of property file for the application is  "Application.properties"
-		String propertyFileName = args[0] + ".properties";
-		logger.debug(propertyFileName);
 
 		AppConfig config;
 		try {
 			config = new AppConfig(args[0]);
 		} catch (IOException e) {
 			throw new NoApplicationConfigurationFileException(
-					"Couldn't find the configuration file for the application: " + propertyFileName);
+					"Couldn't find the configuration file for the application: " + args[0]);
 		}
-		logger.info("Application Property File: " + propertyFileName);
 
 		ExtractCPILogs ecl = new ExtractCPILogs(config);
-		Extractable extractor = ExtractorFactory.getExtractor(config);
-		ecl.setExtractor(extractor);
-		
-		Exportable exporter = ExporterFactory.getExporter(config);
-		ecl.setExporter(exporter);
-		
+		ecl.setExtractor(ExtractorFactory.getExtractor(config));
+		ecl.setExporter(ExporterFactory.getExporter(config));
 		ecl.processLog();
-		}
-
+	}
 
 	public void processLog() {
 		ArrayList<CPILog> logList = this.extractor.extract();

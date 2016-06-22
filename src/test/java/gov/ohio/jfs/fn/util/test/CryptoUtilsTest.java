@@ -11,8 +11,6 @@ import org.junit.Test;
 import gov.ohio.jfs.fn.util.CryptoUtils;
 
 public class CryptoUtilsTest {
-	private static Logger logger = Logger.getLogger(CryptoUtilsTest.class);
-
 	@Test
 	public void testEncrypt() throws GeneralSecurityException {
 		// Use the following code to generate an encrypted password.

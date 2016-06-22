@@ -78,8 +78,6 @@ public class FileNetExtractorTest {
 	public void testExtract() {
 		FileNetExtractor extractor = new FileNetExtractor();
 
-		CryptoUtils cryptor = new CryptoUtils();
-		
 		extractor.setMax(100);
 		
 		initializeFileNetExtractor(extractor);

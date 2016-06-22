@@ -1,8 +1,6 @@
 package gov.ohio.jfs.fn.cpi;
 
 public class ExporterFactory {
-	private static AppConfig appConfig;
-
 	public static final String EXPORTER_TYPE_CSV = "CSV";
 	public static final String EXPORTER_TYPE_XML = "XML";
 	public static final String EXPORTER_TYPE_DB = "DB";

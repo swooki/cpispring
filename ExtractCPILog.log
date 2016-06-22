@@ -6741,3 +6741,44 @@ FileNetP8Engine {
 2016-02-03 15:11:58,239 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
 2016-02-03 15:12:04,054 INFO   [ExtractCPILogs] 17 logs are extracted.
 2016-02-03 15:12:04,056 INFO   [ExtractCPILogs] 17 logs are exported.
+2016-06-21 09:48:37,363 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2016-06-21 09:48:37,709 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\COTSWorkspace\ExtractCPILogSpring
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2016-06-21 09:48:37,768 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2016-06-21 09:49:01,279 INFO   [ExtractCPILogs] 28 logs are extracted.
+2016-06-21 09:49:01,287 INFO   [ExtractCPILogs] 28 logs are exported.
+2016-06-21 09:50:24,513 INFO   [ExtractCPILogs] Application Name: FN_UIDMS
+2016-06-21 09:50:24,613 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\COTSWorkspace\ExtractCPILogSpring
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2016-06-21 09:50:24,641 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2016-06-21 09:50:25,852 INFO   [ExtractCPILogs] 28 logs are extracted.
+2016-06-21 09:50:25,852 INFO   [CSVExporter] CSV Exporter is selected.
+2016-06-21 09:50:25,852 INFO   [CSVExporter] Date Format:"MM/dd/yyyy HH:mm:ss"
+2016-06-21 09:50:25,852 INFO   [CSVExporter] Is Append:true
+2016-06-21 09:50:25,854 INFO   [ExtractCPILogs] 28 logs are exported.
+2016-06-21 10:00:45,328 INFO   [ExtractCPILogs] Application Name: FN_CCMEP
+2016-06-21 10:00:45,423 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\COTSWorkspace\ExtractCPILogSpring
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2016-06-21 10:00:45,452 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2016-06-21 10:00:46,397 INFO   [ExtractCPILogs] 4 logs are extracted.
+2016-06-21 10:00:46,398 INFO   [CSVExporter] CSV Exporter is selected.
+2016-06-21 10:00:46,398 INFO   [CSVExporter] Date Format:"MM/dd/yyyy HH:mm:ss"
+2016-06-21 10:00:46,398 INFO   [CSVExporter] Is Append:true
+2016-06-21 10:00:46,399 INFO   [ExtractCPILogs] 4 logs are exported.
+2016-06-21 13:28:14,403 INFO   [ExtractCPILogs] Application Name: FN_CCMEP
+2016-06-21 13:28:14,516 INFO   [ConfigValueLookup] Configuration property file search order:
+    user.dir = C:\git\COTSWorkspace\ExtractCPILogSpring
+    user.home = C:\Users\KWONS
+    java.home = C:\Program Files (x86)\Java\jre7
+2016-06-21 13:28:14,546 INFO   [ConfigValueLookup] Loading configuration resource: FileNetBuild.properties
+2016-06-21 13:28:31,080 INFO   [ExtractCPILogs] 4 logs are extracted.
+2016-06-21 13:28:31,080 INFO   [CSVExporter] CSV Exporter is selected.
+2016-06-21 13:28:31,080 INFO   [CSVExporter] Date Format:"MM/dd/yyyy HH:mm:ss"
+2016-06-21 13:28:31,080 INFO   [CSVExporter] Is Append:true
+2016-06-21 13:28:31,082 INFO   [ExtractCPILogs] 4 logs are exported.

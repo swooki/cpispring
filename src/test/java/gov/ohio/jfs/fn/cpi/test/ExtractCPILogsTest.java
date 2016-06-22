@@ -7,7 +7,6 @@ import org.junit.Test;
 import gov.ohio.jfs.fn.cpi.AppConfig;
 import gov.ohio.jfs.fn.cpi.CPILog;
 import gov.ohio.jfs.fn.cpi.Exportable;
-import gov.ohio.jfs.fn.cpi.Exporter;
 import gov.ohio.jfs.fn.cpi.ExporterFactory;
 import gov.ohio.jfs.fn.cpi.ExtractCPILogs;
 import gov.ohio.jfs.fn.cpi.Extractable;

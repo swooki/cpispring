@@ -4,8 +4,6 @@ import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import javax.security.auth.Subject;
-
 import org.apache.log4j.Logger;
 
 import com.filenet.api.collection.IndependentObjectSet;
@@ -112,7 +110,7 @@ public class FileNetExtractor extends Extractor implements Extractable {
 			Domain dom = Factory.Domain.getInstance(conn, null);
 			ObjectStore os = Factory.ObjectStore.getInstance(dom, this.objectStoreName);
 			os.refresh();
-			
+
 			logs = fetchLogs(dom, os);
 
 		} finally {
@@ -176,6 +174,7 @@ public class FileNetExtractor extends Extractor implements Extractable {
 		return logs;
 	}
 
+	@SuppressWarnings("rawtypes")
 	private void getTargetInfo(Domain dom, ObjectStore os, CPILog log) {
 
 		String queryPersonalId = "";
@@ -209,14 +208,14 @@ public class FileNetExtractor extends Extractor implements Extractable {
 			String targetPersonalId = "";
 			for (String personalId : personalIds) {
 				String stringValue = doc.getProperties().getStringValue(personalId);
-				if(stringValue != null) {
+				if (stringValue != null) {
 					targetPersonalId += (stringValue.trim() + " ");
 				}
 			}
 			logger.debug("targetPersonalId: " + targetPersonalId);
 			log.setPersonalId(targetPersonalId.trim());
 		}
-		
+
 	}
 
 	public String getApplicationName() {

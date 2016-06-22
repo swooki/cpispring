@@ -1,10 +1,5 @@
 package gov.ohio.jfs.fn.cpi;
-
-import java.security.GeneralSecurityException;
-
 import gov.ohio.jfs.fn.cpi.test.TestExtractor;
-import gov.ohio.jfs.fn.util.CryptoUtils;
-
 public class ExtractorFactory {
 	
 	public static final String EXTRACTOR_TYPE_FILENET = "FILENET"; 

@@ -2,11 +2,9 @@ package gov.ohio.jfs.fn.cpi.test;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import gov.ohio.jfs.fn.cpi.AppConfig;
 import gov.ohio.jfs.fn.cpi.CPILog;
 import gov.ohio.jfs.fn.cpi.Extractable;
 
@@ -38,7 +36,7 @@ public class TestExtractor implements Extractable {
 	public CPILog getNewTestCPILog() {
 		Date dateAccessed = new Date();
 		SecureRandom random = new SecureRandom();
-		CPILog log = new CPILog("application", "action", dateAccessed, "new BigInteger(130, random).toString(32)",
+		CPILog log = new CPILog("application", "action", dateAccessed, new BigInteger(130, random).toString(32),
 				"targetAccessed", "userAccessed");
 
 		return log;

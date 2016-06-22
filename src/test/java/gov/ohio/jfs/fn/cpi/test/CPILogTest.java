@@ -2,9 +2,6 @@ package gov.ohio.jfs.fn.cpi.test;
 
 import static org.junit.Assert.*;
 
-import java.math.BigInteger;
-import java.security.SecureRandom;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.junit.Test;
