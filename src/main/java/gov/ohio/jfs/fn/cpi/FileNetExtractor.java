@@ -21,12 +21,13 @@ import com.filenet.api.query.SearchSQL;
 import com.filenet.api.query.SearchScope;
 import com.filenet.api.util.UserContext;
 
-import gov.ohio.jfs.fn.util.CryptoUtils;
+import gov.ohio.jfs.fn.util.Encrypter;
 
 public class FileNetExtractor extends Extractor implements Extractable {
 
 	private static Logger logger = Logger.getLogger(FileNetExtractor.class);
 	private Connection conn;
+	private Encrypter encrypter;
 
 	private String action;
 	private String applicationName;
@@ -42,20 +43,21 @@ public class FileNetExtractor extends Extractor implements Extractable {
 	private FileNetExtractor() {
 		super();
 	}
-	
-	public FileNetExtractor(String CEURI, String username, String encryptedPassword, String stanzaName, String objectStoreName) {
+
+	public FileNetExtractor(String CEURI, String username, String encryptedPassword, String stanzaName,
+			String objectStoreName) {
 		super();
 		this.CEURI = CEURI;
 		this.username = username;
 		this.encryptedPassword = encryptedPassword;
 		this.stanzaName = stanzaName;
 		this.objectStoreName = objectStoreName;
-		
+
 		this.conn = Factory.Connection.getConnection(this.CEURI);
 		logger.info("Connection to filenet has been established.");
-		
+
 	}
-	
+
 	public void setAction(String action) {
 		this.action = action;
 	}
@@ -80,6 +82,10 @@ public class FileNetExtractor extends Extractor implements Extractable {
 		this.personalIds = personalIds;
 	}
 
+	public void setEncrypter(Encrypter encrypter) {
+		this.encrypter = encrypter;
+	}
+
 	@Override
 	public ArrayList<CPILog> extract() {
 		ArrayList<CPILog> logs = new ArrayList<CPILog>();
@@ -92,12 +98,8 @@ public class FileNetExtractor extends Extractor implements Extractable {
 		// logger.debug("Connection to filenet has been established.");
 
 		UserContext uc = UserContext.get();
-		try {
-			uc.pushSubject(UserContext.createSubject(this.conn, this.username,
-					CryptoUtils.decrypt(this.encryptedPassword), this.stanzaName));
-		} catch (GeneralSecurityException e) {
-			logger.error(e.getMessage());
-		}
+		uc.pushSubject(UserContext.createSubject(this.conn, this.username, encrypter.decrypt(this.encryptedPassword),
+				this.stanzaName));
 
 		try {
 			Domain dom = Factory.Domain.getInstance(conn, null);

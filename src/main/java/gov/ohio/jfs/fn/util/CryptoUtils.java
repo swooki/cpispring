@@ -2,12 +2,17 @@ package gov.ohio.jfs.fn.util;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
+import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
 
-public class CryptoUtils{
+public class CryptoUtils implements Encrypter{
 	
 	public static final String AES = "AES";
 
@@ -18,11 +23,17 @@ public class CryptoUtils{
 	 * @throws GeneralSecurityException
 	 * @throws IOException
 	 */
-	public static String encrypt(String value) throws GeneralSecurityException {
-		SecretKeySpec sks = getSecretKeySpec();
-		Cipher cipher = Cipher.getInstance(CryptoUtils.AES);
-		cipher.init(Cipher.ENCRYPT_MODE, sks, cipher.getParameters());
-		byte[] encrypted = cipher.doFinal(value.getBytes());
+	public String encrypt(String value){
+		SecretKeySpec sks;
+		byte[] encrypted = null;
+		try {
+			sks = getSecretKeySpec();
+			Cipher cipher = Cipher.getInstance(CryptoUtils.AES);
+			cipher.init(Cipher.ENCRYPT_MODE, sks, cipher.getParameters());
+			encrypted = cipher.doFinal(value.getBytes());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return byteArrayToHexString(encrypted);
 	}
 
@@ -32,12 +43,17 @@ public class CryptoUtils{
 	 * @throws GeneralSecurityException
 	 * @throws IOException
 	 */
-	public static String decrypt(String message)
-			throws GeneralSecurityException {
-		SecretKeySpec sks = getSecretKeySpec();
-		Cipher cipher = Cipher.getInstance(CryptoUtils.AES);
-		cipher.init(Cipher.DECRYPT_MODE, sks);
-		byte[] decrypted = cipher.doFinal(hexStringToByteArray(message));
+	public String decrypt(String message){
+		SecretKeySpec sks;
+		byte[] decrypted = null;
+		try {
+			sks = getSecretKeySpec();
+			Cipher cipher = Cipher.getInstance(CryptoUtils.AES);
+			cipher.init(Cipher.DECRYPT_MODE, sks);
+			decrypted = cipher.doFinal(hexStringToByteArray(message));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return new String(decrypted);
 	}
 
@@ -72,13 +88,5 @@ public class CryptoUtils{
 			b[i] = (byte) v;
 		}
 		return b;
-	}
-	
-	public static void main(String[] args){
-		try {
-			System.out.println(CryptoUtils.decrypt(args[0]));
-		} catch (GeneralSecurityException e) {
-			e.printStackTrace();
-		}
 	}
 }
