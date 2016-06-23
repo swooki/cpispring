@@ -1,18 +1,24 @@
 package gov.ohio.jfs.fn.util.test;
 
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.security.GeneralSecurityException;
 
-import org.apache.log4j.Logger;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import gov.ohio.jfs.fn.util.CryptoUtils;
 import gov.ohio.jfs.fn.util.Encrypter;
+import gov.ohio.jfs.fn.util.UtilConfig;
 
-public class CryptoUtilsTest {
-	Encrypter encrypter = new CryptoUtils();
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes=UtilConfig.class)
+public class EncrypterTest {
+
+	@Autowired
+	private Encrypter encrypter;
 	
 	@Test
 	public void testEncrypt() throws GeneralSecurityException {
@@ -29,5 +35,4 @@ public class CryptoUtilsTest {
 		String encryptedPassword = encrypter.encrypt(plainText);
 		assertEquals(plainText, encrypter.decrypt(encryptedPassword));
 	}
-
 }

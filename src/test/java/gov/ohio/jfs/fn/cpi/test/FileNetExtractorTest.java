@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import gov.ohio.jfs.fn.cpi.CPILog;
 import gov.ohio.jfs.fn.cpi.FileNetExtractor;
-import gov.ohio.jfs.fn.util.CryptoUtils;
+import gov.ohio.jfs.fn.util.AESEncrypter;
 
 public class FileNetExtractorTest {
 

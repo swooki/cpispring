@@ -12,8 +12,11 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
 
-public class CryptoUtils implements Encrypter{
-	
+import org.springframework.stereotype.Component;
+
+@Component
+public class AESEncrypter implements Encrypter {
+
 	public static final String AES = "AES";
 
 	/**
@@ -23,12 +26,12 @@ public class CryptoUtils implements Encrypter{
 	 * @throws GeneralSecurityException
 	 * @throws IOException
 	 */
-	public String encrypt(String value){
+	public String encrypt(String value) {
 		SecretKeySpec sks;
 		byte[] encrypted = null;
 		try {
 			sks = getSecretKeySpec();
-			Cipher cipher = Cipher.getInstance(CryptoUtils.AES);
+			Cipher cipher = Cipher.getInstance(AESEncrypter.AES);
 			cipher.init(Cipher.ENCRYPT_MODE, sks, cipher.getParameters());
 			encrypted = cipher.doFinal(value.getBytes());
 		} catch (Exception e) {
@@ -43,12 +46,12 @@ public class CryptoUtils implements Encrypter{
 	 * @throws GeneralSecurityException
 	 * @throws IOException
 	 */
-	public String decrypt(String message){
+	public String decrypt(String message) {
 		SecretKeySpec sks;
 		byte[] decrypted = null;
 		try {
 			sks = getSecretKeySpec();
-			Cipher cipher = Cipher.getInstance(CryptoUtils.AES);
+			Cipher cipher = Cipher.getInstance(AESEncrypter.AES);
 			cipher.init(Cipher.DECRYPT_MODE, sks);
 			decrypted = cipher.doFinal(hexStringToByteArray(message));
 		} catch (Exception e) {
@@ -57,10 +60,9 @@ public class CryptoUtils implements Encrypter{
 		return new String(decrypted);
 	}
 
-	private static SecretKeySpec getSecretKeySpec()
-			throws NoSuchAlgorithmException {
+	private static SecretKeySpec getSecretKeySpec() throws NoSuchAlgorithmException {
 		byte[] key = readKeyFile();
-		SecretKeySpec sks = new SecretKeySpec(key, CryptoUtils.AES);
+		SecretKeySpec sks = new SecretKeySpec(key, AESEncrypter.AES);
 		return sks;
 	}
 
